@@ -31,7 +31,7 @@ end
 def analyze_jobs(manifest_hash, details_on = false)
   puts ''
   puts '### Jobs ###'
-  manifest_hash['jobs'].each do |job|
+  get_jobs_with_instances(manifest_hash).each do |job|
     puts "- #{job['name']}; #{job['instances']} vms : "
     analyze_persistent_disk job, manifest_hash
 
@@ -63,8 +63,8 @@ def analyze_disk_usage(manifest_hash)
   get_jobs_with_instances(manifest_hash).each do |job|
     unless job['persistent_disk_pool'].nil?
       pool = get_disk_pool(manifest_hash, job['persistent_disk_pool'])
-      disk_usage += pool['disk_size']
-      puts "- job: #{job['name']} ; pool: #{job['persistent_disk_pool']} -> #{pool['disk_size']}"
+      disk_usage += pool['disk_size'] * job['instances']
+      puts "- job: #{job['name']}; vms: #{job['instances']} ; pool: #{job['persistent_disk_pool']} -> #{pool['disk_size']}"
     end
   end
   puts ''
