@@ -1,12 +1,5 @@
 #! /usr/bin/env ruby
-
-require 'yaml'
-require 'pp'
-require 'erb'
-
-def load_yml(file_path)
-  YAML::load_file(file_path)
-end
+require_relative 'lib/deployment_file_reader.rb'
 
 def check_args
   if ARGV[0].nil? || ARGV[0] == ''
@@ -72,23 +65,9 @@ def analyze_disk_usage(manifest_hash)
   puts ''
 end
 
-def get_disk_pools(manifest_hash)
-  manifest_hash['disk_pools']
-end
-
-def get_disk_pool(manifest_hash, disk_pool_name)
-  get_disk_pools(manifest_hash).select { |dp| dp['name'] == disk_pool_name }.first
-end
-
-def get_jobs_with_instances(manifest_hash)
-  manifest_hash['jobs'].select {|job| job['instances'] > 0 }
-end
-
 def main
   check_args
-  manifest_raw = File.read ARGV[0]
-  erb = ERB.new manifest_raw
-  manifest = YAML.load erb.result
+  manifest = load_yml ARGV[0]
   details_on = false
   details_on = true if ARGV[1] == '--details'
   analyze_manifest manifest, details_on

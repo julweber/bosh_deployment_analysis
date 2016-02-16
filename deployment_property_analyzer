@@ -1,0 +1,41 @@
+#! /usr/bin/env ruby
+require_relative 'lib/deployment_file_reader.rb'
+
+def check_args
+  if ARGV[0].nil? || ARGV[0] == ''
+    puts "Usage: deployment_property_analyzer <deployment_file_path> [job_name (optional)]"
+    exit -1
+  end
+end
+
+def analyze_properties(manifest_hash, job_name = nil)
+  puts ''
+  puts '### Properties ###'
+  if job_name.nil?
+    get_properties(manifest_hash).each do |prop|
+      analyze_property prop
+    end
+  else
+    prop = get_properties(manifest_hash).select { |prop| prop == job_name }.first
+    analyze_property prop
+  end
+  puts ''
+end
+
+def analyze_property(property)
+  puts "------------- #{property.first} -------------"
+  puts ''
+  pp property.last
+  puts "-" * 30
+  puts ''
+end
+
+def main
+  check_args
+  manifest = load_yml ARGV[0]
+  job_name = nil
+  job_name = ARGV[1] unless ARGV[1].nil?
+  analyze_properties manifest, job_name
+end
+
+main
