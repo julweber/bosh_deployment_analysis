@@ -13,6 +13,7 @@ def analyze_manifest(manifest_hash, details_on = false)
   analyze_releases(manifest_hash, details_on)
   analyze_jobs(manifest_hash, details_on)
   analyze_disk_usage(manifest_hash)
+  analyze_vm_usage(manifest_hash)
 end
 
 def analyze_releases(manifest_hash, details_on = false)
@@ -62,6 +63,40 @@ def analyze_disk_usage(manifest_hash)
   end
   puts ''
   puts "Total: #{disk_usage} MB -> #{disk_usage/1024.0} GB"
+  puts ''
+end
+
+def analyze_vm_usage(manifest_hash)
+  puts '### VM Usage ###'
+  usage = {}
+
+  # initialize usage array
+  get_resource_pools(manifest_hash).each do |rp|
+    name = rp['name']
+    vm_type = 'undefined'
+    avl_zone = 'undefined'
+
+    unless rp['cloud_properties'].nil?
+      vm_type = rp['cloud_properties']['instance_type'] unless rp['cloud_properties']['instance_type'].nil?
+      avl_zone = rp['cloud_properties']['availability_zone'] unless rp['cloud_properties']['availability_zone'].nil?
+    end
+
+    usage[name] = { name: name, type: vm_type, avl_zone: avl_zone, count: 0 }
+  end
+
+  # fill usage array
+  get_jobs_with_instances(manifest_hash).each do |job|
+    usage[job['resource_pool']][:count] = usage[job['resource_pool']][:count]+job['instances'].to_i
+  end
+
+  number_of_vms = 0
+  usage.each do |key, item|
+    puts "- Pool: #{item[:name]} , Avl Zone: #{item[:avl_zone]}, Type: #{item[:type]}, Count: #{item[:count]}"
+    number_of_vms += item[:count]
+  end
+
+  puts ''
+  puts "Total VMs: #{number_of_vms}"
   puts ''
 end
 
