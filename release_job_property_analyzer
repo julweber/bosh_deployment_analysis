@@ -1,0 +1,74 @@
+#! /usr/bin/env ruby
+require_relative 'lib/deployment_file_reader.rb'
+require_relative 'lib/release_job.rb'
+
+def check_args(args)
+  if args[0].nil? || args[0] == ''
+    puts "Usage: release_job_property_analyzer <release_directory>"
+    exit -1
+  end
+end
+
+def main
+  check_args(ARGV)
+  release_directory = ARGV[0]
+  if release_directory[release_directory.size-1] == '/'
+    release_directory = release_directory[0..-2]
+  end
+  analyze_release release_directory
+end
+
+def analyze_release(release_directory)
+  jobs_directory = "#{release_directory}/jobs/"
+  job_directories = Dir["#{jobs_directory}*"]
+  jobs = job_directories.map { |j| { name: j.sub(jobs_directory, ''), path: j } }
+
+  puts "Jobs:"
+  puts jobs
+  puts "-"*30
+
+  specs = jobs.map do |job_hash|
+    ReleaseJob.create_from_path job_hash[:name], job_hash[:path]
+  end
+  analyze_job_properties specs
+end
+
+def analyze_job_properties(specs)
+  job_properties = {}
+
+  specs.each do |s|
+    s.properties.each do |p|
+      property_name = p.first
+      description = p.last["description"]
+      job_name = s.name
+      default = p.last["default"]
+
+      if job_properties[property_name].nil?
+        job_properties[property_name] = {jobs: [job_name], default: default, description: description}
+      else
+        job_properties[property_name][:jobs] << job_name
+        if job_properties[property_name][:default].nil?
+          job_properties[property_name][:default] = default unless default.nil?
+        end
+        if job_properties[property_name][:description].nil?
+          job_properties[property_name][:description] = default unless description.nil?
+        end
+      end
+    end
+  end
+
+  puts "#"*30
+  puts "Job Property Count: #{job_properties.count}"
+  puts "#"*30
+
+  puts ""
+  puts "Properties:"
+  puts ""
+
+  job_properties.sort.each do |jp|
+    puts "-"*20
+    puts jp
+  end
+end
+
+main

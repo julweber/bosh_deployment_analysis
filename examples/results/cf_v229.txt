@@ -1,0 +1,1808 @@
+Jobs:
+{:name=>"acceptance-tests", :path=>"/Users/dude/rubydev/anynines/releases/cf-release/jobs/acceptance-tests"}
+{:name=>"cloud_controller_clock", :path=>"/Users/dude/rubydev/anynines/releases/cf-release/jobs/cloud_controller_clock"}
+{:name=>"cloud_controller_ng", :path=>"/Users/dude/rubydev/anynines/releases/cf-release/jobs/cloud_controller_ng"}
+{:name=>"cloud_controller_worker", :path=>"/Users/dude/rubydev/anynines/releases/cf-release/jobs/cloud_controller_worker"}
+{:name=>"collector", :path=>"/Users/dude/rubydev/anynines/releases/cf-release/jobs/collector"}
+{:name=>"consul_agent", :path=>"/Users/dude/rubydev/anynines/releases/cf-release/jobs/consul_agent"}
+{:name=>"dea_logging_agent", :path=>"/Users/dude/rubydev/anynines/releases/cf-release/jobs/dea_logging_agent"}
+{:name=>"dea_next", :path=>"/Users/dude/rubydev/anynines/releases/cf-release/jobs/dea_next"}
+{:name=>"debian_nfs_server", :path=>"/Users/dude/rubydev/anynines/releases/cf-release/jobs/debian_nfs_server"}
+{:name=>"doppler", :path=>"/Users/dude/rubydev/anynines/releases/cf-release/jobs/doppler"}
+{:name=>"etcd", :path=>"/Users/dude/rubydev/anynines/releases/cf-release/jobs/etcd"}
+{:name=>"etcd_metrics_server", :path=>"/Users/dude/rubydev/anynines/releases/cf-release/jobs/etcd_metrics_server"}
+{:name=>"gorouter", :path=>"/Users/dude/rubydev/anynines/releases/cf-release/jobs/gorouter"}
+{:name=>"haproxy", :path=>"/Users/dude/rubydev/anynines/releases/cf-release/jobs/haproxy"}
+{:name=>"hm9000", :path=>"/Users/dude/rubydev/anynines/releases/cf-release/jobs/hm9000"}
+{:name=>"loggregator_trafficcontroller", :path=>"/Users/dude/rubydev/anynines/releases/cf-release/jobs/loggregator_trafficcontroller"}
+{:name=>"metron_agent", :path=>"/Users/dude/rubydev/anynines/releases/cf-release/jobs/metron_agent"}
+{:name=>"nats", :path=>"/Users/dude/rubydev/anynines/releases/cf-release/jobs/nats"}
+{:name=>"nats_stream_forwarder", :path=>"/Users/dude/rubydev/anynines/releases/cf-release/jobs/nats_stream_forwarder"}
+{:name=>"nfs_mounter", :path=>"/Users/dude/rubydev/anynines/releases/cf-release/jobs/nfs_mounter"}
+{:name=>"postgres", :path=>"/Users/dude/rubydev/anynines/releases/cf-release/jobs/postgres"}
+{:name=>"route_registrar", :path=>"/Users/dude/rubydev/anynines/releases/cf-release/jobs/route_registrar"}
+{:name=>"routing-api", :path=>"/Users/dude/rubydev/anynines/releases/cf-release/jobs/routing-api"}
+{:name=>"smoke-tests", :path=>"/Users/dude/rubydev/anynines/releases/cf-release/jobs/smoke-tests"}
+{:name=>"statsd-injector", :path=>"/Users/dude/rubydev/anynines/releases/cf-release/jobs/statsd-injector"}
+{:name=>"syslog_drain_binder", :path=>"/Users/dude/rubydev/anynines/releases/cf-release/jobs/syslog_drain_binder"}
+{:name=>"uaa", :path=>"/Users/dude/rubydev/anynines/releases/cf-release/jobs/uaa"}
+------------------------------
+##############################
+Job Property Count: 591
+##############################
+
+Properties:
+
+--------------------
+acceptance_tests.admin_password
+{:jobs=>["acceptance-tests"], :default=>nil, :description=>"The Elastic Runtime API admin user's password"}
+--------------------
+acceptance_tests.admin_user
+{:jobs=>["acceptance-tests"], :default=>nil, :description=>"The Elastic Runtime API admin user"}
+--------------------
+acceptance_tests.api
+{:jobs=>["acceptance-tests"], :default=>nil, :description=>"The Elastic Runtime API endpoint URL"}
+--------------------
+acceptance_tests.apps_domain
+{:jobs=>["acceptance-tests"], :default=>nil, :description=>"The Elastic Runtime Application Domain"}
+--------------------
+acceptance_tests.backend
+{:jobs=>["acceptance-tests"], :default=>nil, :description=>"App tests push their apps using the backend specified. Route service tests require this flag to be set to diego in order to run."}
+--------------------
+acceptance_tests.binary_buildpack_name
+{:jobs=>["acceptance-tests"], :default=>nil, :description=>"The name of the binary buildpack to use in acceptance tests that specify a buildpack."}
+--------------------
+acceptance_tests.broker_start_timeout
+{:jobs=>["acceptance-tests"], :default=>nil, :description=>"Timeout for broker starts"}
+--------------------
+acceptance_tests.cf_push_timeout
+{:jobs=>["acceptance-tests"], :default=>nil, :description=>"Timeout for cf push"}
+--------------------
+acceptance_tests.client_secret
+{:jobs=>["acceptance-tests"], :default=>nil, :description=>"The client secret for the uaa gorouter client"}
+--------------------
+acceptance_tests.default_timeout
+{:jobs=>["acceptance-tests"], :default=>nil, :description=>"Default Timeout"}
+--------------------
+acceptance_tests.enable_color
+{:jobs=>["acceptance-tests"], :default=>true, :description=>"Enable colorized output on ginkgo."}
+--------------------
+acceptance_tests.existing_user
+{:jobs=>["acceptance-tests"], :default=>nil, :description=>"The username of an existing user. If set, the acceptance-tests will push apps and perform other actions as this user, otherwise its default behaviour is to create a temporary user for such actions."}
+--------------------
+acceptance_tests.existing_user_password
+{:jobs=>["acceptance-tests"], :default=>nil, :description=>"The password of the existing user. Only required if the existing user property is also being set."}
+--------------------
+acceptance_tests.go_buildpack_name
+{:jobs=>["acceptance-tests"], :default=>nil, :description=>"The name of the go buildpack to use in acceptance tests that specify a buildpack."}
+--------------------
+acceptance_tests.include_diego_docker
+{:jobs=>["acceptance-tests"], :default=>false, :description=>"Flag to include v3 API tests related to running Docker apps on Diego. Diego must be deployed and the CC API docker_diego feature flag must be enabled for these tests to pass."}
+--------------------
+acceptance_tests.include_internet_dependent
+{:jobs=>["acceptance-tests"], :default=>false, :description=>"Flag to include the internet dependent test suite."}
+--------------------
+acceptance_tests.include_logging
+{:jobs=>["acceptance-tests"], :default=>false, :description=>"Flag to include the logging test suite."}
+--------------------
+acceptance_tests.include_operator
+{:jobs=>["acceptance-tests"], :default=>false, :description=>"Flag to include the operator tests which may modify the global state of an Elastic Runtime deployment."}
+--------------------
+acceptance_tests.include_route_services
+{:jobs=>["acceptance-tests"], :default=>false, :description=>"Flag to include the route services tests. Diego must be deployed for these tests to pass."}
+--------------------
+acceptance_tests.include_routing
+{:jobs=>["acceptance-tests"], :default=>false, :description=>"Flag to include the routing test suite."}
+--------------------
+acceptance_tests.include_routing_api
+{:jobs=>["acceptance-tests"], :default=>false, :description=>"Flag to include the routing_api test suite."}
+--------------------
+acceptance_tests.include_security_groups
+{:jobs=>["acceptance-tests"], :default=>false, :description=>"Flag to include the security groups test suite."}
+--------------------
+acceptance_tests.include_services
+{:jobs=>["acceptance-tests"], :default=>false, :description=>"Flag to include the services API test suite."}
+--------------------
+acceptance_tests.include_sso
+{:jobs=>["acceptance-tests"], :default=>false, :description=>"Flag to include the services tests that integrate with SSO."}
+--------------------
+acceptance_tests.include_v3
+{:jobs=>["acceptance-tests"], :default=>false, :description=>"Flag to include the v3 API test suite."}
+--------------------
+acceptance_tests.java_buildpack_name
+{:jobs=>["acceptance-tests"], :default=>nil, :description=>"The name of the java buildpack to use in acceptance tests that specify a buildpack."}
+--------------------
+acceptance_tests.long_curl_timeout
+{:jobs=>["acceptance-tests"], :default=>nil, :description=>"Timeout for long curls"}
+--------------------
+acceptance_tests.nodejs_buildpack_name
+{:jobs=>["acceptance-tests"], :default=>nil, :description=>"The name of the nodejs buildpack to use in acceptance tests that specify a buildpack."}
+--------------------
+acceptance_tests.nodes
+{:jobs=>["acceptance-tests"], :default=>2, :description=>"The number of parallel test executors to spawn. The larger the number the higher the stress on the system."}
+--------------------
+acceptance_tests.php_buildpack_name
+{:jobs=>["acceptance-tests"], :default=>nil, :description=>"The name of the php buildpack to use in acceptance tests that specify a buildpack."}
+--------------------
+acceptance_tests.python_buildpack_name
+{:jobs=>["acceptance-tests"], :default=>nil, :description=>"The name of the python buildpack to use in acceptance tests that specify a buildpack."}
+--------------------
+acceptance_tests.ruby_buildpack_name
+{:jobs=>["acceptance-tests"], :default=>nil, :description=>"The name of the ruby buildpack to use in acceptance tests that specify a buildpack."}
+--------------------
+acceptance_tests.skip_diego_unsupported_tests
+{:jobs=>["acceptance-tests"], :default=>false, :description=>"Skip tests that are known to not be supported by Diego. Set to true if your deployment defaults to Diego as its runtime."}
+--------------------
+acceptance_tests.skip_regex
+{:jobs=>["acceptance-tests"], :default=>nil, :description=>"Regex for tests that should be skipped"}
+--------------------
+acceptance_tests.skip_ssl_validation
+{:jobs=>["acceptance-tests"], :default=>false, :description=>"Toggles cli verification of the Elastic Runtime API SSL certificate"}
+--------------------
+acceptance_tests.staticfile_buildpack_name
+{:jobs=>["acceptance-tests"], :default=>nil, :description=>"The name of the staticfile buildpack to use in acceptance tests that specify a buildpack."}
+--------------------
+acceptance_tests.system_domain
+{:jobs=>["acceptance-tests"], :default=>nil, :description=>"The system domain for your CF release"}
+--------------------
+acceptance_tests.use_http
+{:jobs=>["acceptance-tests"], :default=>false, :description=>"Flag for using HTTP when making api and application requests rather than the default HTTPS"}
+--------------------
+acceptance_tests.verbose
+{:jobs=>["acceptance-tests"], :default=>false, :description=>"Whether to pass the -v flag to cf-acceptance-tests"}
+--------------------
+app_domains
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>nil, :description=>"Array of domains for user apps (example: 'user.app.space.foo', a user app called 'neat' will listen at 'http://neat.user.app.space.foo')"}
+--------------------
+app_ssh.host_key_fingerprint
+{:jobs=>["cloud_controller_ng"], :default=>nil, :description=>"Fingerprint of the host key of the SSH proxy that brokers connections to application instances"}
+--------------------
+app_ssh.oauth_client_id
+{:jobs=>["cloud_controller_ng"], :default=>"ssh-proxy", :description=>"The oauth client ID of the SSH proxy"}
+--------------------
+app_ssh.port
+{:jobs=>["cloud_controller_ng", "haproxy"], :default=>2222, :description=>"External port for SSH access to application instances"}
+--------------------
+build
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>"", :description=>"'build' attribute in the /v2/info endpoint"}
+--------------------
+cc.allow_app_ssh_access
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker", "haproxy"], :default=>true, :description=>"Allow users to change the value of the app-level allow_ssh attribute"}
+--------------------
+cc.allowed_cors_domains
+{:jobs=>["cloud_controller_ng"], :default=>[], :description=>"List of domains (including scheme) from which Cross-Origin requests will be accepted, a * can be used as a wildcard for any part of a domain"}
+--------------------
+cc.app_bits_max_body_size
+{:jobs=>["cloud_controller_ng"], :default=>"1536M", :description=>"Maximum body size for nginx bits uploads"}
+--------------------
+cc.app_bits_upload_grace_period_in_seconds
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>1200, :description=>"Extra token expiry time while uploading big apps."}
+--------------------
+cc.app_events.cutoff_age_in_days
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>31, :description=>"How old an app event should stay in cloud controller database before being cleaned up"}
+--------------------
+cc.app_usage_events.cutoff_age_in_days
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>31, :description=>"How old an app usage event should stay in cloud controller database before being cleaned up"}
+--------------------
+cc.audit_events.cutoff_age_in_days
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>31, :description=>"How old an audit event should stay in cloud controller database before being cleaned up"}
+--------------------
+cc.broker_client_default_async_poll_interval_seconds
+{:jobs=>["cloud_controller_ng", "cloud_controller_worker"], :default=>60, :description=>"Specifies interval on which the CC will poll a service broker for asynchronous actions. If the service broker provides a value, this value is the minimum accepted value the broker can provide."}
+--------------------
+cc.broker_client_max_async_poll_duration_minutes
+{:jobs=>["cloud_controller_ng", "cloud_controller_worker"], :default=>10080, :description=>"The max duration the CC will fetch service instance state from a service broker (in minutes). Default is 1 week"}
+--------------------
+cc.broker_client_timeout_seconds
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>60, :description=>"For requests to service brokers, this is the HTTP (open and read) timeout setting."}
+--------------------
+cc.buildpacks.buildpack_directory_key
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>"cc-buildpacks", :description=>"Directory (bucket) used store buildpacks.  It does not have be pre-created."}
+--------------------
+cc.buildpacks.cdn.key_pair_id
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>"", :description=>"Key pair name for signed download URIs"}
+--------------------
+cc.buildpacks.cdn.private_key
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>"", :description=>"Private key for signing download URIs"}
+--------------------
+cc.buildpacks.cdn.uri
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>"", :description=>"URI for a CDN to used for buildpack downloads"}
+--------------------
+cc.buildpacks.fog_connection
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>nil, :description=>"Fog connection hash"}
+--------------------
+cc.bulk_api_password
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker", "hm9000", "syslog_drain_binder"], :default=>nil, :description=>"Password used to access the bulk_api, health_manager uses it to connect to the cc, announced over NATS"}
+--------------------
+cc.bulk_api_user
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker", "hm9000"], :default=>"bulk_api", :description=>"User used to access the bulk_api, health_manager uses it to connect to the cc, announced over NATS"}
+--------------------
+cc.cc_partition
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>"default", :description=>"Deprecated. Defines a 'partition' for the health_manager job"}
+--------------------
+cc.client_max_body_size
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>"1536M", :description=>"Maximum body size for nginx"}
+--------------------
+cc.db_encryption_key
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>"", :description=>"key for encrypting sensitive values in the CC database"}
+--------------------
+cc.db_logging_level
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>"debug2", :description=>"Log level for cc database operations"}
+--------------------
+cc.default_app_disk_in_mb
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>1024, :description=>"The default disk space an app gets"}
+--------------------
+cc.default_app_memory
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>1024, :description=>"How much memory given to an app if not specified"}
+--------------------
+cc.default_fog_connection.local_root
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>"/var/vcap/nfs/shared", :description=>"Local root when fog provider is not overridden (should be an NFS mount if using more than one cloud controller)"}
+--------------------
+cc.default_fog_connection.provider
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>"Local", :description=>"Local fog provider (should always be 'Local'), used if fog_connection hash is not provided in the manifest"}
+--------------------
+cc.default_health_check_timeout
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>60, :description=>"Default health check timeout (in seconds) that can be set for the app"}
+--------------------
+cc.default_quota_definition
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>"default", :description=>"Local to use a local (NFS) file system.  AWS to use AWS."}
+--------------------
+cc.default_running_security_groups
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>nil, :description=>"The default running security groups that will be seeded in CloudController."}
+--------------------
+cc.default_stack
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>"cflinuxfs2", :description=>"The default stack to use if no custom stack is specified by an app."}
+--------------------
+cc.default_staging_security_groups
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>nil, :description=>"The default staging security groups that will be seeded in CloudController."}
+--------------------
+cc.default_to_diego_backend
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>false, :description=>"Use Diego backend by default for new apps"}
+--------------------
+cc.development_mode
+{:jobs=>["cloud_controller_ng", "cloud_controller_worker"], :default=>false, :description=>"Enable development features for monitoring and insight"}
+--------------------
+cc.diego.nsync_url
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>"http://nsync.service.cf.internal:8787", :description=>"URL of the Diego nsync service"}
+--------------------
+cc.diego.stager_url
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>"http://stager.service.cf.internal:8888", :description=>"URL of the Diego stager service"}
+--------------------
+cc.diego.tps_url
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>"http://tps.service.cf.internal:1518", :description=>"URL of the Diego tps service"}
+--------------------
+cc.directories.diagnostics
+{:jobs=>["cloud_controller_ng"], :default=>"/var/vcap/data/cloud_controller_ng/diagnostics", :description=>"The directory where operator requested diagnostic files should be placed"}
+--------------------
+cc.directories.tmpdir
+{:jobs=>["cloud_controller_ng"], :default=>"/var/vcap/data/cloud_controller_ng/tmp", :description=>"The directory to use for temporary files"}
+--------------------
+cc.disable_custom_buildpacks
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>false, :description=>"Disable external (i.e. git) buildpacks? (Admin buildpacks and system buildpacks only.)"}
+--------------------
+cc.droplets.cdn.key_pair_id
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>"", :description=>"Key pair name for signed download URIs"}
+--------------------
+cc.droplets.cdn.private_key
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>"", :description=>"Private key for signing download URIs"}
+--------------------
+cc.droplets.cdn.uri
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>"", :description=>"URI for a CDN to used for droplet downloads"}
+--------------------
+cc.droplets.droplet_directory_key
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>"cc-droplets", :description=>"Directory (bucket) used store droplets.  It does not have be pre-created."}
+--------------------
+cc.droplets.fog_connection
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>nil, :description=>"Fog connection hash"}
+--------------------
+cc.droplets.max_staged_droplets_stored
+{:jobs=>["cloud_controller_ng"], :default=>5, :description=>"Number of recent, staged droplets stored per app (not including current droplet)"}
+--------------------
+cc.external_host
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>"api", :description=>"Host part of the cloud_controller api URI, will be joined with value of 'domain'"}
+--------------------
+cc.external_port
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>9022, :description=>"External Cloud Controller port"}
+--------------------
+cc.external_protocol
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>"https", :description=>"The protocol used to access the CC API from an external entity"}
+--------------------
+cc.failed_jobs.cutoff_age_in_days
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>31, :description=>"How old a failed job should stay in cloud controller database before being cleaned up"}
+--------------------
+cc.feature_disabled_message
+{:jobs=>["cloud_controller_ng"], :default=>nil, :description=>"Custom message to use for a disabled feature."}
+--------------------
+cc.flapping_crash_count_threshold
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>3, :description=>"The threshold of crashes after which the app is marked as flapping"}
+--------------------
+cc.info.custom
+{:jobs=>["cloud_controller_ng"], :default=>nil, :description=>"Custom attribute keys and values for /v2/info endpoint"}
+--------------------
+cc.install_buildpacks
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>nil, :description=>"Set of buildpacks to install during deploy"}
+--------------------
+cc.instance_file_descriptor_limit
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>16384, :description=>"The file descriptors made available to each app instance"}
+--------------------
+cc.internal_api_password
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker", "dea_next", "hm9000"], :default=>nil, :description=>"Password used by Diego to access internal endpoints"}
+--------------------
+cc.internal_api_user
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker", "dea_next", "hm9000"], :default=>"internal_user", :description=>"User name used by Diego to access internal endpoints"}
+--------------------
+cc.jobs.app_bits_packer.timeout_in_seconds
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>nil, :description=>"The longest this job can take before it is cancelled"}
+--------------------
+cc.jobs.app_events_cleanup.timeout_in_seconds
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>nil, :description=>"The longest this job can take before it is cancelled"}
+--------------------
+cc.jobs.app_usage_events_cleanup.timeout_in_seconds
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>nil, :description=>"The longest this job can take before it is cancelled"}
+--------------------
+cc.jobs.blobstore_delete.timeout_in_seconds
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>nil, :description=>"The longest this job can take before it is cancelled"}
+--------------------
+cc.jobs.blobstore_upload.timeout_in_seconds
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>nil, :description=>"The longest this job can take before it is cancelled"}
+--------------------
+cc.jobs.droplet_deletion.timeout_in_seconds
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>nil, :description=>"The longest this job can take before it is cancelled"}
+--------------------
+cc.jobs.droplet_upload.timeout_in_seconds
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>nil, :description=>"The longest this job can take before it is cancelled"}
+--------------------
+cc.jobs.generic.number_of_workers
+{:jobs=>["cloud_controller_worker"], :default=>1, :description=>"Number of generic cloud_controller_worker workers"}
+--------------------
+cc.jobs.global.timeout_in_seconds
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>14400, :description=>"The longest any job can take before it is cancelled unless overriden per job"}
+--------------------
+cc.jobs.local.number_of_workers
+{:jobs=>["cloud_controller_ng"], :default=>2, :description=>"Number of local cloud_controller_worker workers"}
+--------------------
+cc.logging_level
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>"debug2", :description=>"Log level for cc"}
+--------------------
+cc.logging_max_retries
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>1, :description=>"Passthru value for Steno logger"}
+--------------------
+cc.maximum_app_disk_in_mb
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>2048, :description=>"The maximum amount of disk a user can request"}
+--------------------
+cc.maximum_health_check_timeout
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>180, :description=>"Maximum health check timeout (in seconds) that can be set for the app"}
+--------------------
+cc.min_cli_version
+{:jobs=>["cloud_controller_ng"], :default=>nil, :description=>"Minimum version of the CF CLI to work with the API."}
+--------------------
+cc.min_recommended_cli_version
+{:jobs=>["cloud_controller_ng"], :default=>nil, :description=>"Minimum recommended version of the CF CLI."}
+--------------------
+cc.newrelic.capture_params
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>false, :description=>"Capture and send query params to NewRelic"}
+--------------------
+cc.newrelic.developer_mode
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>false, :description=>"Activate NewRelic developer mode"}
+--------------------
+cc.newrelic.environment_name
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>"development", :description=>"The environment name used by NewRelic"}
+--------------------
+cc.newrelic.license_key
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>nil, :description=>"The api key for NewRelic"}
+--------------------
+cc.newrelic.log_file_path
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>"/var/vcap/sys/log/cloud_controller_ng/newrelic", :description=>"The location for NewRelic to log to"}
+--------------------
+cc.newrelic.monitor_mode
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>false, :description=>"Activate NewRelic monitor mode"}
+--------------------
+cc.newrelic.transaction_tracer.enabled
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>false, :description=>"Enable transaction tracing in NewRelic"}
+--------------------
+cc.newrelic.transaction_tracer.record_sql
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>"off", :description=>"NewRelic's SQL statement recording mode: [off | obfuscated | raw]"}
+--------------------
+cc.nginx_access_log_destination
+{:jobs=>["cloud_controller_ng"], :default=>"/var/vcap/sys/log/nginx_cc/nginx.access.log", :description=>"The nginx access log destination. This can be used to route access logs to a file, syslog, or a memory buffer."}
+--------------------
+cc.nginx_access_log_format
+{:jobs=>["cloud_controller_ng"], :default=>"$host - [$time_local] \"$request\" $status $bytes_sent \"$http_referer\" \"$http_user_agent\" $proxy_add_x_forwarded_for vcap_request_id:$upstream_http_x_vcap_request_id response_time:$upstream_response_time\n", :description=>"The nginx log format string to use when writing to the access log."}
+--------------------
+cc.nginx_error_log_destination
+{:jobs=>["cloud_controller_ng"], :default=>"/var/vcap/sys/log/nginx_cc/nginx.error.log", :description=>"The nginx error log destination. This can be used to route error logs to a file, syslog, or a memory buffer."}
+--------------------
+cc.nginx_error_log_level
+{:jobs=>["cloud_controller_ng"], :default=>"error", :description=>"The lowest severity nginx log level to capture in the error log."}
+--------------------
+cc.packages.app_package_directory_key
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>"cc-packages", :description=>"Directory (bucket) used store app packages.  It does not have be pre-created."}
+--------------------
+cc.packages.cdn.key_pair_id
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>"", :description=>"Key pair name for signed download URIs"}
+--------------------
+cc.packages.cdn.private_key
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>"", :description=>"Private key for signing download URIs"}
+--------------------
+cc.packages.cdn.uri
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>"", :description=>"URI for a CDN to used for app package downloads"}
+--------------------
+cc.packages.fog_connection
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>nil, :description=>"Fog connection hash"}
+--------------------
+cc.packages.max_package_size
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>1073741824, :description=>"Maximum size of application package"}
+--------------------
+cc.packages.max_valid_packages_stored
+{:jobs=>["cloud_controller_ng"], :default=>5, :description=>"Number of recent, valid packages stored per app (not including package for current droplet)"}
+--------------------
+cc.pending_packages.expiration_in_seconds
+{:jobs=>["cloud_controller_clock"], :default=>1200, :description=>"How long packages can remain in pending state before being cleaned up"}
+--------------------
+cc.pending_packages.frequency_in_seconds
+{:jobs=>["cloud_controller_clock"], :default=>300, :description=>"How often the package pending cleanup job runs"}
+--------------------
+cc.placement_top_stager_percentage
+{:jobs=>["cloud_controller_ng"], :default=>10, :description=>"The percentage of top stagers considered when choosing a stager"}
+--------------------
+cc.quota_definitions
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>nil, :description=>"Hash of default quota definitions. Overriden by custom quota definitions."}
+--------------------
+cc.renderer.default_results_per_page
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>50, :description=>"Default number of results returned per page if user does not specify"}
+--------------------
+cc.renderer.max_inline_relations_depth
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>2, :description=>"Maximum depth of inlined relationships in the result"}
+--------------------
+cc.renderer.max_results_per_page
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>100, :description=>"Maximum number of results returned per page"}
+--------------------
+cc.resource_pool.cdn.key_pair_id
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>"", :description=>"Key pair name for signed download URIs"}
+--------------------
+cc.resource_pool.cdn.private_key
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>"", :description=>"Private key for signing download URIs"}
+--------------------
+cc.resource_pool.cdn.uri
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>"", :description=>"URI for a CDN to used for resource pool downloads"}
+--------------------
+cc.resource_pool.fog_connection
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>nil, :description=>"Fog connection hash"}
+--------------------
+cc.resource_pool.maximum_size
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>536870912, :description=>"Maximum size of a resource to add to the pool"}
+--------------------
+cc.resource_pool.minimum_size
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>65536, :description=>"Minimum size of a resource to add to the pool"}
+--------------------
+cc.resource_pool.resource_directory_key
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>"cc-resources", :description=>"Directory (bucket) used store app resources.  It does not have be pre-created."}
+--------------------
+cc.security_group_definitions
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>nil, :description=>"Array of security groups that will be seeded into CloudController."}
+--------------------
+cc.service_usage_events.cutoff_age_in_days
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>31, :description=>"How old a service usage event should stay in cloud controller database before being cleaned up"}
+--------------------
+cc.srv_api_uri
+{:jobs=>["dea_next", "hm9000", "loggregator_trafficcontroller", "syslog_drain_binder"], :default=>nil, :description=>"API URI of cloud controller"}
+--------------------
+cc.stacks
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>[{"name"=>"cflinuxfs2", "description"=>"Cloud Foundry Linux-based filesystem"}], :description=>"Tag used by the DEA to describe capabilities (i.e. 'Windows7', 'python-linux'). DEA and CC must agree."}
+--------------------
+cc.staging_file_descriptor_limit
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>16384, :description=>"File descriptor limit for staging tasks"}
+--------------------
+cc.staging_timeout_in_seconds
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>900, :description=>"Timeout for staging a droplet"}
+--------------------
+cc.staging_upload_password
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>"", :description=>"User's password used to access internal endpoints of Cloud Controller to upload files when staging"}
+--------------------
+cc.staging_upload_user
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>"", :description=>"User name used to access internal endpoints of Cloud Controller to upload files when staging"}
+--------------------
+cc.statsd_host
+{:jobs=>["cloud_controller_ng"], :default=>"127.0.0.1", :description=>"The host for the statsd server, defaults to the local metron agent"}
+--------------------
+cc.statsd_port
+{:jobs=>["cloud_controller_ng"], :default=>8125, :description=>"The port for the statsd server, defaults to the local metron agent"}
+--------------------
+cc.thresholds.api.alert_if_above_mb
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng"], :default=>2250, :description=>"The cc will alert if memory remains above this threshold for 3 monit cycles"}
+--------------------
+cc.thresholds.api.restart_if_above_mb
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng"], :default=>2450, :description=>"The cc will restart if memory remains above this threshold for 3 monit cycles"}
+--------------------
+cc.thresholds.api.restart_if_consistently_above_mb
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng"], :default=>2250, :description=>"The cc will restart if memory remains above this threshold for 15 monit cycles"}
+--------------------
+cc.thresholds.worker.alert_if_above_mb
+{:jobs=>["cloud_controller_worker"], :default=>384, :description=>"The cc will alert if memory remains above this threshold for 3 monit cycles"}
+--------------------
+cc.thresholds.worker.restart_if_above_mb
+{:jobs=>["cloud_controller_worker"], :default=>512, :description=>"The cc will restart if memory remains above this threshold for 3 monit cycles"}
+--------------------
+cc.thresholds.worker.restart_if_consistently_above_mb
+{:jobs=>["cloud_controller_worker"], :default=>384, :description=>"The cc will restart if memory remains above this threshold for 15 monit cycles"}
+--------------------
+cc.uaa_resource_id
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>"cloud_controller,cloud_controller_service_permissions", :description=>"Name of service to register to UAA"}
+--------------------
+cc.users_can_select_backend
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>true, :description=>"Allow non-admin users to switch their apps between DEA and Diego backends"}
+--------------------
+ccdb.address
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>nil, :description=>nil}
+--------------------
+ccdb.databases
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>nil, :description=>nil}
+--------------------
+ccdb.db_scheme
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>"postgres", :description=>nil}
+--------------------
+ccdb.max_connections
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>25, :description=>"Maximum connections for Sequel"}
+--------------------
+ccdb.pool_timeout
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>10, :description=>nil}
+--------------------
+ccdb.port
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>nil, :description=>nil}
+--------------------
+ccdb.roles
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>nil, :description=>nil}
+--------------------
+collector.aws.access_key_id
+{:jobs=>["collector"], :default=>nil, :description=>"AWS access key for CloudWatch access"}
+--------------------
+collector.aws.secret_access_key
+{:jobs=>["collector"], :default=>nil, :description=>"AWS secret for CloudWatch access"}
+--------------------
+collector.datadog.api_key
+{:jobs=>["collector"], :default=>nil, :description=>"Datadog API key"}
+--------------------
+collector.datadog.application_key
+{:jobs=>["collector"], :default=>nil, :description=>"Datadog application key"}
+--------------------
+collector.deployment_name
+{:jobs=>["collector"], :default=>nil, :description=>"name for this bosh deployment. All metrics will be tagged with deployment:XXX when sending them to CloudWatch, Datadog and Graphite"}
+--------------------
+collector.graphite.address
+{:jobs=>["collector"], :default=>nil, :description=>"IP address of Graphite"}
+--------------------
+collector.graphite.port
+{:jobs=>["collector"], :default=>nil, :description=>"TCP port of Graphite"}
+--------------------
+collector.intervals.discover
+{:jobs=>["collector"], :default=>60, :description=>"the interval in seconds that the collector attempts to discover components"}
+--------------------
+collector.intervals.healthz
+{:jobs=>["collector"], :default=>30, :description=>"the interval in seconds that healthz is checked"}
+--------------------
+collector.intervals.local_metrics
+{:jobs=>["collector"], :default=>30, :description=>"the interval in seconds that local_metrics are checked"}
+--------------------
+collector.intervals.nats_ping
+{:jobs=>["collector"], :default=>30, :description=>"the interval in seconds that the collector pings nats to record latency"}
+--------------------
+collector.intervals.prune
+{:jobs=>["collector"], :default=>300, :description=>"the interval in seconds that the collector attempts to prune unresponsive components"}
+--------------------
+collector.intervals.varz
+{:jobs=>["collector"], :default=>30, :description=>"the interval in seconds that varz is checked"}
+--------------------
+collector.logging_level
+{:jobs=>["collector"], :default=>"info", :description=>"the logging level for the collector"}
+--------------------
+collector.memory_threshold
+{:jobs=>["collector"], :default=>800, :description=>"Memory threshold for collector restart (Mb)"}
+--------------------
+collector.opentsdb.address
+{:jobs=>["collector"], :default=>nil, :description=>"IP address of OpenTsdb"}
+--------------------
+collector.opentsdb.port
+{:jobs=>["collector"], :default=>nil, :description=>"TCP port of OpenTsdb"}
+--------------------
+collector.use_aws_cloudwatch
+{:jobs=>["collector"], :default=>false, :description=>"enable CloudWatch plugin"}
+--------------------
+collector.use_datadog
+{:jobs=>["collector"], :default=>false, :description=>"enable Datadog plugin"}
+--------------------
+collector.use_graphite
+{:jobs=>["collector"], :default=>false, :description=>"enable Graphite plugin"}
+--------------------
+collector.use_tsdb
+{:jobs=>["collector"], :default=>false, :description=>"enable OpenTsdb plugin"}
+--------------------
+consul.agent.datacenter
+{:jobs=>["consul_agent"], :default=>"dc1", :description=>"Name of the agent's datacenter."}
+--------------------
+consul.agent.log_level
+{:jobs=>["consul_agent"], :default=>"info", :description=>"Agent log level."}
+--------------------
+consul.agent.mode
+{:jobs=>["consul_agent"], :default=>"client", :description=>"Mode to run the agent in. (client or server)"}
+--------------------
+consul.agent.protocol_version
+{:jobs=>["consul_agent"], :default=>2, :description=>"The Consul protocol to use."}
+--------------------
+consul.agent.servers.lan
+{:jobs=>["consul_agent"], :default=>[], :description=>"LAN server addresses to join on start."}
+--------------------
+consul.agent.servers.wan
+{:jobs=>["consul_agent"], :default=>[], :description=>"WAN server addresses to join."}
+--------------------
+consul.agent.services
+{:jobs=>["consul_agent"], :default=>{}, :description=>"Map of consul service definitions."}
+--------------------
+consul.agent_cert
+{:jobs=>["consul_agent"], :default=>nil, :description=>"PEM-encoded agent certificate"}
+--------------------
+consul.agent_key
+{:jobs=>["consul_agent"], :default=>nil, :description=>"PEM-encoded client key"}
+--------------------
+consul.ca_cert
+{:jobs=>["consul_agent"], :default=>nil, :description=>"PEM-encoded CA certificate"}
+--------------------
+consul.encrypt_keys
+{:jobs=>["consul_agent"], :default=>nil, :description=>"A list of passphrases that will be converted into encryption keys, the first key in the list is the active one"}
+--------------------
+consul.require_ssl
+{:jobs=>["consul_agent"], :default=>true, :description=>"enable ssl for all communication with consul"}
+--------------------
+consul.server_cert
+{:jobs=>["consul_agent"], :default=>nil, :description=>"PEM-encoded server certificate"}
+--------------------
+consul.server_key
+{:jobs=>["consul_agent"], :default=>nil, :description=>"PEM-encoded server key"}
+--------------------
+databases.additional_config
+{:jobs=>["postgres"], :default=>nil, :description=>"A map of additional key/value pairs to include as extra configuration properties"}
+--------------------
+databases.address
+{:jobs=>["postgres"], :default=>nil, :description=>"The database address"}
+--------------------
+databases.collect_statement_statistics
+{:jobs=>["postgres"], :default=>false, :description=>"Enable the `pg_stat_statements` extension and collect statement execution statistics"}
+--------------------
+databases.databases
+{:jobs=>["postgres"], :default=>nil, :description=>"A list of databases and associated properties to create"}
+--------------------
+databases.db_scheme
+{:jobs=>["postgres"], :default=>nil, :description=>"The database scheme"}
+--------------------
+databases.log_line_prefix
+{:jobs=>["postgres"], :default=>"%m: ", :description=>"The postgres `printf` style string that is output at the beginning of each log line"}
+--------------------
+databases.max_connections
+{:jobs=>["postgres"], :default=>nil, :description=>"Maximum number of database connections"}
+--------------------
+databases.port
+{:jobs=>["postgres"], :default=>nil, :description=>"The database port"}
+--------------------
+databases.roles
+{:jobs=>["postgres"], :default=>nil, :description=>"A list of database roles and associated properties to create"}
+--------------------
+dea_logging_agent.debug
+{:jobs=>["dea_logging_agent"], :default=>false, :description=>"boolean value to turn on verbose mode"}
+--------------------
+dea_next.advertise_interval_in_seconds
+{:jobs=>["cloud_controller_ng", "dea_next"], :default=>5, :description=>"Advertise interval for DEAs"}
+--------------------
+dea_next.allow_host_access
+{:jobs=>["dea_next"], :default=>false, :description=>"Allows warden containers to access the DEA host via its IP"}
+--------------------
+dea_next.allow_networks
+{:jobs=>["dea_next"], :default=>nil, :description=>nil}
+--------------------
+dea_next.crash_lifetime_secs
+{:jobs=>["dea_next"], :default=>3600, :description=>"Crashed app lifetime in seconds"}
+--------------------
+dea_next.default_health_check_timeout
+{:jobs=>["dea_next"], :default=>60, :description=>"Default timeout for application to start"}
+--------------------
+dea_next.deny_networks
+{:jobs=>["dea_next"], :default=>nil, :description=>nil}
+--------------------
+dea_next.directory_server_protocol
+{:jobs=>["dea_next"], :default=>"https", :description=>"The protocol to use when communicating with the directory server (\"http\" or \"https\")"}
+--------------------
+dea_next.disk_mb
+{:jobs=>["dea_next"], :default=>32000, :description=>nil}
+--------------------
+dea_next.disk_overcommit_factor
+{:jobs=>["dea_next"], :default=>1, :description=>nil}
+--------------------
+dea_next.evacuation_bail_out_time_in_seconds
+{:jobs=>["dea_next"], :default=>115, :description=>"Duration to wait before shutting down, in seconds."}
+--------------------
+dea_next.heartbeat_interval_in_seconds
+{:jobs=>["dea_next", "hm9000"], :default=>10, :description=>"frequency of heartbeats in seconds."}
+--------------------
+dea_next.instance_bandwidth_limit.burst
+{:jobs=>["dea_next"], :default=>nil, :description=>"Network bandwidth burst limit for running instances in bytes"}
+--------------------
+dea_next.instance_bandwidth_limit.rate
+{:jobs=>["dea_next"], :default=>nil, :description=>"Network bandwidth limit for running instances in bytes per second"}
+--------------------
+dea_next.instance_disk_inode_limit
+{:jobs=>["dea_next"], :default=>200000, :description=>"Limit on inodes for an instance container"}
+--------------------
+dea_next.instance_max_cpu_share_limit
+{:jobs=>["dea_next"], :default=>256, :description=>"The maximum number of CPU shares that can be given to an app"}
+--------------------
+dea_next.instance_memory_to_cpu_share_ratio
+{:jobs=>["dea_next"], :default=>8, :description=>"Controls the relationship between app memory and cpu shares. app_cpu_shares = app_memory / cpu_share_factor"}
+--------------------
+dea_next.instance_min_cpu_share_limit
+{:jobs=>["dea_next"], :default=>1, :description=>"The minimum number of CPU shares that can be given to an app"}
+--------------------
+dea_next.instance_nproc_limit
+{:jobs=>["dea_next"], :default=>512, :description=>"Limit on nproc for an instance container"}
+--------------------
+dea_next.kernel_network_tuning_enabled
+{:jobs=>["dea_next"], :default=>true, :description=>"with latest kernel version, no kernel network tunings allowed with in warden cpi containers"}
+--------------------
+dea_next.logging_level
+{:jobs=>["dea_next"], :default=>"debug", :description=>"Log level for DEA."}
+--------------------
+dea_next.max_staging_duration
+{:jobs=>["dea_next"], :default=>900, :description=>nil}
+--------------------
+dea_next.memory_mb
+{:jobs=>["dea_next"], :default=>8000, :description=>nil}
+--------------------
+dea_next.memory_overcommit_factor
+{:jobs=>["dea_next"], :default=>1, :description=>nil}
+--------------------
+dea_next.mtu
+{:jobs=>["dea_next"], :default=>1500, :description=>"Interface MTU size"}
+--------------------
+dea_next.post_setup_hook
+{:jobs=>["dea_next"], :default=>nil, :description=>"DEPRECATED: a single line of bash to prepend to the start command"}
+--------------------
+dea_next.rlimit_core
+{:jobs=>["dea_next"], :default=>0, :description=>"Maximum size of core file in bytes. 0 represents no core dump files can be created, and -1 represents no size limits."}
+--------------------
+dea_next.stacks
+{:jobs=>["dea_next"], :default=>[{"name"=>"cflinuxfs2", "package_path"=>"/var/vcap/packages/rootfs_cflinuxfs2/rootfs"}], :description=>"An array of stacks, specifying the name and package path."}
+--------------------
+dea_next.staging_bandwidth_limit.burst
+{:jobs=>["dea_next"], :default=>nil, :description=>"Network bandwidth burst limit for staging tasks in bytes"}
+--------------------
+dea_next.staging_bandwidth_limit.rate
+{:jobs=>["dea_next"], :default=>nil, :description=>"Network bandwidth limit for staging tasks in bytes per second"}
+--------------------
+dea_next.staging_cpu_limit_shares
+{:jobs=>["dea_next"], :default=>512, :description=>"CPU limit in shares for staging tasks cgroup"}
+--------------------
+dea_next.staging_disk_inode_limit
+{:jobs=>["dea_next"], :default=>200000, :description=>"Limit on inodes for a staging container"}
+--------------------
+dea_next.staging_disk_limit_mb
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker", "dea_next"], :default=>6144, :description=>"Disk limit in mb for staging tasks"}
+--------------------
+dea_next.staging_memory_limit_mb
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker", "dea_next"], :default=>1024, :description=>"Memory limit in mb for staging tasks"}
+--------------------
+dea_next.streaming_timeout
+{:jobs=>["dea_next"], :default=>60, :description=>nil}
+--------------------
+dea_next.zone
+{:jobs=>["dea_next"], :default=>"default", :description=>"The Availability Zone"}
+--------------------
+description
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>"", :description=>"'description' attribute in the /v2/info endpoint"}
+--------------------
+disk_quota_enabled
+{:jobs=>["dea_next"], :default=>true, :description=>"disk quota must be disabled to use warden-inside-warden with the warden cpi"}
+--------------------
+domain
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker", "dea_next", "hm9000", "uaa"], :default=>nil, :description=>"domain where cloud_controller will listen (api.domain) often the same as the system domain"}
+--------------------
+doppler.blacklisted_syslog_ranges
+{:jobs=>["doppler"], :default=>nil, :description=>"Blacklist for IPs that should not be used as syslog drains, e.g. internal ip addresses."}
+--------------------
+doppler.container_metric_ttl_seconds
+{:jobs=>["doppler"], :default=>120, :description=>"TTL (in seconds) for container usage metrics"}
+--------------------
+doppler.debug
+{:jobs=>["doppler"], :default=>false, :description=>"boolean value to turn on verbose logging for doppler system (dea agent & doppler server)"}
+--------------------
+doppler.dropsonde_incoming_port
+{:jobs=>["doppler"], :default=>3457, :description=>"Port for incoming messages in the dropsonde format"}
+--------------------
+doppler.enable_tls_transport
+{:jobs=>["doppler"], :default=>false, :description=>"Enable TLS listener on doppler so that it can receive dropsonde envelopes over TLS transport. If enabled, Cert and Key files must be specified."}
+--------------------
+doppler.enabled
+{:jobs=>["cloud_controller_ng"], :default=>true, :description=>"Whether to expose the doppler_logging_endpoint listed at /v2/info"}
+--------------------
+doppler.incoming_port
+{:jobs=>["doppler"], :default=>3456, :description=>"Port for incoming log messages in the legacy format"}
+--------------------
+doppler.maxRetainedLogMessages
+{:jobs=>["doppler"], :default=>100, :description=>"number of log messages to retain per application"}
+--------------------
+doppler.message_drain_buffer_size
+{:jobs=>["doppler"], :default=>100, :description=>"Size of the internal buffer used by doppler to store messages. If the buffer gets full doppler will drop the messages."}
+--------------------
+doppler.outgoing_port
+{:jobs=>["doppler"], :default=>8081, :description=>"Port for outgoing log messages"}
+--------------------
+doppler.port
+{:jobs=>["cloud_controller_ng"], :default=>443, :description=>"Port for doppler_logging_endpoint listed at /v2/info"}
+--------------------
+doppler.sink_dial_timeout_seconds
+{:jobs=>["doppler"], :default=>1, :description=>"Dial timeout for sinks"}
+--------------------
+doppler.sink_inactivity_timeout_seconds
+{:jobs=>["doppler"], :default=>3600, :description=>"Interval before removing a sink due to inactivity"}
+--------------------
+doppler.sink_io_timeout_seconds
+{:jobs=>["doppler"], :default=>0, :description=>"I/O Timeout on sinks"}
+--------------------
+doppler.syslog_skip_cert_verify
+{:jobs=>["doppler"], :default=>true, :description=>"When connecting over TLS, don't verify certificates for syslog sink"}
+--------------------
+doppler.tls_server.cert
+{:jobs=>["doppler"], :default=>"", :description=>"TLS server certificate"}
+--------------------
+doppler.tls_server.key
+{:jobs=>["doppler"], :default=>"", :description=>"TLS server key"}
+--------------------
+doppler.tls_server.port
+{:jobs=>["doppler"], :default=>3458, :description=>"Port for incoming messages in the dropsonde format over tls listener"}
+--------------------
+doppler.uaa_client_id
+{:jobs=>["loggregator_trafficcontroller"], :default=>"doppler", :description=>"Doppler's client id to connect to UAA"}
+--------------------
+doppler.unmarshaller_count
+{:jobs=>["doppler"], :default=>5, :description=>"Number of parallel unmarshallers to run within Doppler"}
+--------------------
+doppler.use_ssl
+{:jobs=>["cloud_controller_ng"], :default=>true, :description=>"Whether to use ssl for the doppler_logging_endpoint listed at /v2/info"}
+--------------------
+doppler.websocket_write_timeout_seconds
+{:jobs=>["doppler"], :default=>60, :description=>"Interval before a websocket write is aborted if it does not succeed"}
+--------------------
+doppler.zone
+{:jobs=>["doppler"], :default=>nil, :description=>"Zone of the doppler server"}
+--------------------
+doppler_endpoint.shared_secret
+{:jobs=>["doppler"], :default=>nil, :description=>"Shared secret used to verify cryptographically signed dropsonde messages"}
+--------------------
+dropsonde.enabled
+{:jobs=>["gorouter"], :default=>false, :description=>"Enable the dropsonde emitter library"}
+--------------------
+env.http_proxy
+{:jobs=>["uaa"], :default=>nil, :description=>"The http_proxy across the VMs"}
+--------------------
+env.https_proxy
+{:jobs=>["uaa"], :default=>nil, :description=>"The https_proxy across the VMs"}
+--------------------
+env.no_proxy
+{:jobs=>["uaa"], :default=>nil, :description=>"Set No_Proxy across the VMs"}
+--------------------
+etcd.ca_cert
+{:jobs=>["etcd"], :default=>nil, :description=>"PEM-encoded CA certificate"}
+--------------------
+etcd.client_cert
+{:jobs=>["etcd"], :default=>nil, :description=>"PEM-encoded client certificate"}
+--------------------
+etcd.client_key
+{:jobs=>["etcd"], :default=>nil, :description=>"PEM-encoded client key"}
+--------------------
+etcd.cluster
+{:jobs=>["etcd"], :default=>nil, :description=>"Information about etcd cluster"}
+--------------------
+etcd.dns_health_check_host
+{:jobs=>["etcd"], :default=>"consul.service.cf.internal", :description=>"Host to ping for confirmation of DNS resolution"}
+--------------------
+etcd.election_timeout_in_milliseconds
+{:jobs=>["etcd"], :default=>1000, :description=>"Time without receiving a heartbeat before peer should attempt to become leader in milliseconds. See https://coreos.com/docs/cluster-management/debugging/etcd-tuning"}
+--------------------
+etcd.heartbeat_interval_in_milliseconds
+{:jobs=>["etcd"], :default=>50, :description=>"Interval between heartbeats in milliseconds. See https://coreos.com/docs/cluster-management/debugging/etcd-tuning"}
+--------------------
+etcd.machines
+{:jobs=>["etcd", "hm9000", "routing-api"], :default=>nil, :description=>"Addresses of etcd machines"}
+--------------------
+etcd.peer_ca_cert
+{:jobs=>["etcd"], :default=>nil, :description=>"PEM-encoded peer CA certificate"}
+--------------------
+etcd.peer_cert
+{:jobs=>["etcd"], :default=>nil, :description=>"PEM-encoded peer certificate"}
+--------------------
+etcd.peer_key
+{:jobs=>["etcd"], :default=>nil, :description=>"PEM-encoded peer key"}
+--------------------
+etcd.peer_require_ssl
+{:jobs=>["etcd"], :default=>true, :description=>"enable ssl between etcd peers"}
+--------------------
+etcd.require_ssl
+{:jobs=>["etcd"], :default=>true, :description=>"enable ssl for all communication with etcd"}
+--------------------
+etcd.server_cert
+{:jobs=>["etcd"], :default=>nil, :description=>"PEM-encoded server certificate"}
+--------------------
+etcd.server_key
+{:jobs=>["etcd"], :default=>nil, :description=>"PEM-encoded server key"}
+--------------------
+etcd_metrics_server.etcd.machine
+{:jobs=>["etcd_metrics_server"], :default=>"127.0.0.1", :description=>"address of ETCD server to instrument"}
+--------------------
+etcd_metrics_server.etcd.port
+{:jobs=>["etcd_metrics_server"], :default=>4001, :description=>"port of ETCD server to instrument"}
+--------------------
+etcd_metrics_server.nats.machines
+{:jobs=>["etcd_metrics_server"], :default=>nil, :description=>"array of NATS addresses"}
+--------------------
+etcd_metrics_server.nats.password
+{:jobs=>["etcd_metrics_server"], :default=>nil, :description=>"NATS server password"}
+--------------------
+etcd_metrics_server.nats.port
+{:jobs=>["etcd_metrics_server"], :default=>4222, :description=>"NATS server port"}
+--------------------
+etcd_metrics_server.nats.username
+{:jobs=>["etcd_metrics_server"], :default=>nil, :description=>"NATS server username"}
+--------------------
+etcd_metrics_server.status.password
+{:jobs=>["etcd_metrics_server"], :default=>"", :description=>"basic auth password for metrics server (leave empty for generated)"}
+--------------------
+etcd_metrics_server.status.port
+{:jobs=>["etcd_metrics_server"], :default=>5678, :description=>"listening port for metrics server"}
+--------------------
+etcd_metrics_server.status.username
+{:jobs=>["etcd_metrics_server"], :default=>"", :description=>"basic auth username for metrics server (leave empty for generated)"}
+--------------------
+ha_proxy.buffer_size_bytes
+{:jobs=>["haproxy"], :default=>16384, :description=>"Buffer size to use for requests, any requests larger than this (large cookies or query strings) will result in a gateway error"}
+--------------------
+ha_proxy.disable_http
+{:jobs=>["haproxy"], :default=>false, :description=>"Disable port 80 traffic"}
+--------------------
+ha_proxy.dontlognull
+{:jobs=>["haproxy"], :default=>false, :description=>"Whether to disable logging of requests with no traffic (usually load-balancer TCP checks)"}
+--------------------
+ha_proxy.enable_stats_socket
+{:jobs=>["haproxy"], :default=>false, :description=>"Whether to enable a socket that can be used to query errors and status"}
+--------------------
+ha_proxy.log_to_file
+{:jobs=>["haproxy"], :default=>false, :description=>"Whether to send logs to a file instead of the default syslog"}
+--------------------
+ha_proxy.ssl_ciphers
+{:jobs=>["haproxy"], :default=>"ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-CBC-SHA256:ECDHE-RSA-AES256-CBC-SHA384:ECDHE-RSA-AES128-CBC-SHA:ECDHE-RSA-AES256-CBC-SHA:AES128-SHA256:AES128-SHA", :description=>"List of SSL Ciphers that are passed to HAProxy"}
+--------------------
+ha_proxy.ssl_pem
+{:jobs=>["haproxy"], :default=>nil, :description=>"SSL certificate (PEM file)"}
+--------------------
+hm9000.desired_state_batch_size
+{:jobs=>["hm9000"], :default=>5000, :description=>"The batch size when fetching desired state information from the CC."}
+--------------------
+hm9000.fetcher_network_timeout_in_seconds
+{:jobs=>["hm9000"], :default=>30, :description=>"Each API call to the CC must succeed within this timeout."}
+--------------------
+hm9000.port
+{:jobs=>["hm9000"], :default=>nil, :description=>"The port to serve API requests"}
+--------------------
+hm9000.sender_message_limit
+{:jobs=>["hm9000"], :default=>60, :description=>"The maximum number of messages the sender should send per invocation."}
+--------------------
+hm9000.url
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>nil, :description=>nil}
+--------------------
+logger_endpoint.port
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>443, :description=>"Port for logger endpoint listed at /v2/info"}
+--------------------
+logger_endpoint.use_ssl
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>true, :description=>"Whether to use ssl for logger endpoint listed at /v2/info"}
+--------------------
+loggregator.doppler_port
+{:jobs=>["loggregator_trafficcontroller"], :default=>8081, :description=>"Port for outgoing doppler messages"}
+--------------------
+loggregator.dropsonde_incoming_port
+{:jobs=>["metron_agent"], :default=>3457, :description=>"Port where loggregator listens for dropsonde log messages"}
+--------------------
+loggregator.etcd.machines
+{:jobs=>["doppler", "loggregator_trafficcontroller", "metron_agent", "syslog_drain_binder"], :default=>nil, :description=>"IPs pointing to the ETCD cluster"}
+--------------------
+loggregator.etcd.maxconcurrentrequests
+{:jobs=>["loggregator_trafficcontroller", "metron_agent", "syslog_drain_binder"], :default=>10, :description=>"Number of concurrent requests to ETCD"}
+--------------------
+loggregator.outgoing_dropsonde_port
+{:jobs=>["loggregator_trafficcontroller"], :default=>8081, :description=>"Port for outgoing dropsonde messages"}
+--------------------
+loggregator.tls.ca
+{:jobs=>["doppler", "metron_agent"], :default=>"", :description=>"CA root required for key/cert verification"}
+--------------------
+login.analytics.code
+{:jobs=>["uaa"], :default=>nil, :description=>"Google analytics code. If Google Analytics is desired set both login.analytics.code and login.analytics.domain"}
+--------------------
+login.analytics.domain
+{:jobs=>["uaa"], :default=>nil, :description=>"Google analytics domain. If Google Analytics is desired set both login.analytics.code and login.analytics.domain"}
+--------------------
+login.asset_base_url
+{:jobs=>["uaa"], :default=>"/resources/oss", :description=>"Base url for static assets, allows custom styling of the login server.  Use '/resources/pivotal' for Pivotal style."}
+--------------------
+login.brand
+{:jobs=>["uaa"], :default=>"oss", :description=>"The brand to use for the reset password emails, available values are oss and pivotal"}
+--------------------
+login.enabled
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>true, :description=>"whether use login as the authorization endpoint or not"}
+--------------------
+login.entity_id
+{:jobs=>["uaa"], :default=>nil, :description=>"Deprecated. Use login.saml.entityid"}
+--------------------
+login.invitations_enabled
+{:jobs=>["uaa"], :default=>nil, :description=>"Allows users to send invitations to email addresses outside the system and invite them to create an account. Disabled by default."}
+--------------------
+login.ldap.localPasswordCompare
+{:jobs=>["uaa"], :default=>"true", :description=>"Deprecated. Use uaa.ldap.localPasswordCompare - login.ldap prefix is used for backwards compatibility to enable ldap from login config"}
+--------------------
+login.ldap.passwordAttributeName
+{:jobs=>["uaa"], :default=>"userPassword", :description=>"Deprecated. Use uaa.ldap.passwordAttributeName - login.ldap prefix is used for backwards compatibility to enable ldap from login config"}
+--------------------
+login.ldap.passwordEncoder
+{:jobs=>["uaa"], :default=>"org.cloudfoundry.identity.uaa.login.ldap.DynamicPasswordComparator", :description=>"Deprecated. Use uaa.ldap.passwordEncoder - login.ldap prefix is used for backwards compatibility to enable ldap from login config"}
+--------------------
+login.ldap.profile_type
+{:jobs=>["uaa"], :default=>nil, :description=>"Deprecated. Use uaa.ldap.profile_type - login.ldap prefix is used for backwards compatibility to enable ldap from login config"}
+--------------------
+login.ldap.searchBase
+{:jobs=>["uaa"], :default=>"", :description=>"Deprecated. Use uaa.ldap.searchBase - login.ldap prefix is used for backwards compatibility to enable ldap from login config"}
+--------------------
+login.ldap.searchFilter
+{:jobs=>["uaa"], :default=>"cn={0}", :description=>"Deprecated. Use uaa.ldap.searchFilter - login.ldap prefix is used for backwards compatibility to enable ldap from login config"}
+--------------------
+login.ldap.sslCertificate
+{:jobs=>["uaa"], :default=>nil, :description=>"Deprecated. Use uaa.ldap.sslCertificate - login.ldap prefix is used for backwards compatibility to enable ldap from login config"}
+--------------------
+login.ldap.sslCertificateAlias
+{:jobs=>["uaa"], :default=>nil, :description=>"Deprecated. Use uaa.ldap.sslCertificateAlias - login.ldap prefix is used for backwards compatibility to enable ldap from login config"}
+--------------------
+login.ldap.url
+{:jobs=>["uaa"], :default=>nil, :description=>"Deprecated. Use uaa.ldap.url - login.ldap prefix is used for backwards compatibility to enable ldap from login config"}
+--------------------
+login.ldap.userDN
+{:jobs=>["uaa"], :default=>nil, :description=>"Deprecated. Use uaa.ldap.userDN - login.ldap prefix is used for backwards compatibility to enable ldap from login config"}
+--------------------
+login.ldap.userDNPattern
+{:jobs=>["uaa"], :default=>nil, :description=>"Deprecated. Use uaa.ldap.userDNPattern - login.ldap prefix is used for backwards compatibility to enable ldap from login config"}
+--------------------
+login.ldap.userPassword
+{:jobs=>["uaa"], :default=>nil, :description=>"Deprecated. Use uaa.ldap.userPassword - login.ldap prefix is used for backwards compatibility to enable ldap from login config"}
+--------------------
+login.links
+{:jobs=>["uaa"], :default=>nil, :description=>"A hash of home/passwd/signup URLS (see commented examples below)"}
+--------------------
+login.links.passwd
+{:jobs=>["uaa"], :default=>"/forgot_password", :description=>"URL for requesting password reset"}
+--------------------
+login.links.signup
+{:jobs=>["uaa"], :default=>"/create_account", :description=>"URL for requesting to signup/register for an account"}
+--------------------
+login.logout.redirect.parameter.disable
+{:jobs=>["uaa"], :default=>true, :description=>"When set to false, this allows an operator to leverage an open redirect on the UAA (/logout.do?redirect=google.com). No open redirect enabled"}
+--------------------
+login.logout.redirect.parameter.whitelist
+{:jobs=>["uaa"], :default=>nil, :description=>"A list of URLs. When this list is non null, including empty, and disable=false, logout redirects are allowed, but limited to the whitelist URLs. If a redirect parameter value is not white listed, redirect will be to the default URL."}
+--------------------
+login.logout.redirect.url
+{:jobs=>["uaa"], :default=>"/login", :description=>"The Location of the redirect header following a logout of the the UAA (/logout.do)."}
+--------------------
+login.messages
+{:jobs=>["uaa"], :default=>nil, :description=>"A nested or flat hash of messages that the login server uses to display UI message\nThis will be flattened into a java.util.Properties file. The example below will lead\nto four properties, where the key is the concatenated value delimited by dot, for example scope.tokens.read=message\n"}
+--------------------
+login.notifications.url
+{:jobs=>["uaa"], :default=>nil, :description=>"The url for the notifications service (configure to use Notifications Service instead of SMTP server)"}
+--------------------
+login.protocol
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker", "loggregator_trafficcontroller", "uaa"], :default=>"https", :description=>"http or https"}
+--------------------
+login.saml.assertionConsumerIndex
+{:jobs=>["uaa"], :default=>1, :description=>"Deprecated. Use login.saml.providers list objects"}
+--------------------
+login.saml.entity_base_url
+{:jobs=>["uaa"], :default=>nil, :description=>"The URL for which SAML identity providers will post assertions to. If set it overrides the default. This URL should NOT have the schema (http:// or https:// prefix in it) instead just the hostname. The schema is derived by login.protocol property. The default value is \#{protocol}://\#{properties.uaa.url} if uaa.url is set."}
+--------------------
+login.saml.entityid
+{:jobs=>["uaa"], :default=>nil, :description=>"This is used as the SAML Service Provider Entity ID"}
+--------------------
+login.saml.idpEntityAlias
+{:jobs=>["uaa"], :default=>nil, :description=>"Deprecated. Use login.saml.providers list objects"}
+--------------------
+login.saml.idpMetadataURL
+{:jobs=>["uaa"], :default=>nil, :description=>"Deprecated. Use login.saml.providers list objects"}
+--------------------
+login.saml.idp_metadata_file
+{:jobs=>["uaa"], :default=>nil, :description=>"Deprecated. Use login.saml.providers list objects"}
+--------------------
+login.saml.metadataTrustCheck
+{:jobs=>["uaa"], :default=>true, :description=>"Deprecated. Use login.saml.providers list objects"}
+--------------------
+login.saml.nameidFormat
+{:jobs=>["uaa"], :default=>"urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress", :description=>"Deprecated. Use login.saml.providers list objects"}
+--------------------
+login.saml.providers
+{:jobs=>["uaa"], :default=>nil, :description=>"Contains a hash of SAML Identity Providers, the key is the IDP Alias, followed by key/value pairs. To learn more about how to setup a saml identity provider go to https://simplesamlphp.org"}
+--------------------
+login.saml.serviceProviderCertificate
+{:jobs=>["uaa"], :default=>nil, :description=>"Service provider certificate."}
+--------------------
+login.saml.serviceProviderKey
+{:jobs=>["uaa"], :default=>nil, :description=>"Private key for the service provider certificate."}
+--------------------
+login.saml.serviceProviderKeyPassword
+{:jobs=>["uaa"], :default=>nil, :description=>"Password to protect the service provider private key."}
+--------------------
+login.saml.signMetaData
+{:jobs=>["uaa"], :default=>true, :description=>"Global property to sign Local/SP metadata"}
+--------------------
+login.saml.signRequest
+{:jobs=>["uaa"], :default=>true, :description=>"Global property to sign Local/SP requests"}
+--------------------
+login.saml.socket.connectionManagerTimeout
+{:jobs=>["uaa"], :default=>10000, :description=>"Timeout in milliseconds for connection pooling for SAML metadata HTTP requests"}
+--------------------
+login.saml.socket.soTimeout
+{:jobs=>["uaa"], :default=>10000, :description=>"Read timeout in milliseconds for SAML metadata HTTP requests"}
+--------------------
+login.signups_enabled
+{:jobs=>["uaa"], :default=>true, :description=>"Deprecated. Use login.self_service_links_enabled. Instructs UAA to use 'enable account creation flow'. Enabled by default."}
+--------------------
+login.smtp
+{:jobs=>["uaa"], :default=>nil, :description=>"SMTP server configuration, for password reset emails etc."}
+--------------------
+login.smtp.host
+{:jobs=>["uaa"], :default=>"localhost", :description=>"SMTP server host address"}
+--------------------
+login.smtp.password
+{:jobs=>["uaa"], :default=>nil, :description=>"SMTP server password"}
+--------------------
+login.smtp.port
+{:jobs=>["uaa"], :default=>2525, :description=>"SMTP server port"}
+--------------------
+login.smtp.user
+{:jobs=>["uaa"], :default=>nil, :description=>"SMTP server username"}
+--------------------
+login.spring_profiles
+{:jobs=>["uaa"], :default=>nil, :description=>"Deprecated. Use uaa.ldap.enabled - login.spring_profiles is used for backwards compatibility to enable ldap from login config"}
+--------------------
+login.tiles
+{:jobs=>["uaa"], :default=>nil, :description=>"A list of links to other services to show on the landing page after log in."}
+--------------------
+login.uaa_base
+{:jobs=>["uaa"], :default=>nil, :description=>"Deprecated. Use uaa.url for setting the location of UAA."}
+--------------------
+login.url
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>nil, :description=>nil}
+--------------------
+metron_agent.buffer_size
+{:jobs=>["metron_agent"], :default=>100, :description=>"The size of the internal buffer used by metron before sending to Doppler"}
+--------------------
+metron_agent.debug
+{:jobs=>["metron_agent"], :default=>false, :description=>"boolean value to turn on verbose mode"}
+--------------------
+metron_agent.deployment
+{:jobs=>["metron_agent"], :default=>nil, :description=>"Name of deployment (added as tag on all outgoing metrics)"}
+--------------------
+metron_agent.dropsonde_incoming_port
+{:jobs=>["metron_agent"], :default=>3457, :description=>"Incoming port for dropsonde log messages"}
+--------------------
+metron_agent.enable_buffer
+{:jobs=>["metron_agent"], :default=>false, :description=>"boolean value to turn on buffering"}
+--------------------
+metron_agent.logrotate.freq_min
+{:jobs=>["metron_agent"], :default=>5, :description=>"The frequency in minutes which logrotate will rotate VM logs"}
+--------------------
+metron_agent.logrotate.rotate
+{:jobs=>["metron_agent"], :default=>7, :description=>"The number of files that logrotate will keep around on the VM"}
+--------------------
+metron_agent.logrotate.size
+{:jobs=>["metron_agent"], :default=>"50M", :description=>"The size at which logrotate will decide to rotate the log file"}
+--------------------
+metron_agent.preferred_protocol
+{:jobs=>["metron_agent"], :default=>"udp", :description=>"Preferred protocol to droppler (udp|tls)"}
+--------------------
+metron_agent.tls_client.cert
+{:jobs=>["metron_agent"], :default=>"", :description=>"TLS client certificate"}
+--------------------
+metron_agent.tls_client.key
+{:jobs=>["metron_agent"], :default=>"", :description=>"TLS client key"}
+--------------------
+metron_agent.zone
+{:jobs=>["metron_agent"], :default=>nil, :description=>"Availability zone where this agent is running"}
+--------------------
+metron_endpoint.dropsonde_port
+{:jobs=>["dea_logging_agent", "doppler", "gorouter", "loggregator_trafficcontroller", "routing-api", "syslog_drain_binder"], :default=>3457, :description=>"The port used to emit dropsonde messages to the Metron agent"}
+--------------------
+metron_endpoint.host
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker", "dea_logging_agent", "dea_next", "doppler", "gorouter", "routing-api", "syslog_drain_binder"], :default=>"127.0.0.1", :description=>"The host used to emit messages to the Metron agent"}
+--------------------
+metron_endpoint.port
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker", "dea_next", "gorouter"], :default=>3457, :description=>"The port used to emit messages to the Metron agent"}
+--------------------
+metron_endpoint.shared_secret
+{:jobs=>["metron_agent"], :default=>nil, :description=>"Shared secret used to verify cryptographically signed dropsonde messages"}
+--------------------
+name
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>"", :description=>"'name' attribute in the /v2/info endpoint"}
+--------------------
+nats.authorization_timeout
+{:jobs=>["nats"], :default=>15, :description=>"After accepting a connection, wait up to this many seconds for credentials."}
+--------------------
+nats.debug
+{:jobs=>["nats"], :default=>false, :description=>"Enable debug logging output."}
+--------------------
+nats.machines
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker", "collector", "dea_next", "gorouter", "hm9000", "nats", "nats_stream_forwarder", "route_registrar"], :default=>nil, :description=>"IP of each NATS cluster member."}
+--------------------
+nats.monitor_port
+{:jobs=>["nats"], :default=>0, :description=>"Port for varz and connz monitoring. 0 means disabled."}
+--------------------
+nats.password
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker", "collector", "dea_next", "gorouter", "hm9000", "nats", "nats_stream_forwarder", "route_registrar"], :default=>nil, :description=>"Password for cc client to connect to NATS"}
+--------------------
+nats.port
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker", "collector", "dea_next", "gorouter", "hm9000", "nats", "nats_stream_forwarder", "route_registrar"], :default=>nil, :description=>"IP port of Cloud Foundry NATS server"}
+--------------------
+nats.prof_port
+{:jobs=>["nats"], :default=>0, :description=>"Port for pprof. 0 means disabled."}
+--------------------
+nats.trace
+{:jobs=>["nats"], :default=>false, :description=>"Enable trace logging output."}
+--------------------
+nats.user
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker", "collector", "dea_next", "gorouter", "hm9000", "nats", "nats_stream_forwarder", "route_registrar"], :default=>nil, :description=>"Username for cc client to connect to NATS"}
+--------------------
+nfs_server.address
+{:jobs=>["cloud_controller_ng", "cloud_controller_worker", "nfs_mounter"], :default=>nil, :description=>"NFS server for droplets and apps (not used in an AWS deploy, use s3 instead)"}
+--------------------
+nfs_server.allow_from_entries
+{:jobs=>["debian_nfs_server"], :default=>nil, :description=>"An array of Hosts, Domains, Wildcard Domains, CIDR Networks and/or IPs from which /var/vcap/store is accessible"}
+--------------------
+nfs_server.idmapd_domain
+{:jobs=>["debian_nfs_server", "nfs_mounter"], :default=>"localdomain", :description=>"Domain name for NFS idmapd"}
+--------------------
+nfs_server.nfsv4
+{:jobs=>["nfs_mounter"], :default=>nil, :description=>"bool to use NFS4 (not used in an AWS deploy, use s3 instead)"}
+--------------------
+nfs_server.no_root_squash
+{:jobs=>["debian_nfs_server"], :default=>false, :description=>"Exports /var/vcap/store with no_root_squash when set to true"}
+--------------------
+nfs_server.pipefs_directory
+{:jobs=>["debian_nfs_server", "nfs_mounter"], :default=>"/var/lib/nfs/rpc_pipef", :description=>"Pipefs directory for NFS idmapd"}
+--------------------
+nfs_server.share
+{:jobs=>["nfs_mounter"], :default=>nil, :description=>"Path to share from the remote NFS server (not used in an AWS deploy, use s3 instead)"}
+--------------------
+nfs_server.share_path
+{:jobs=>["cloud_controller_ng", "cloud_controller_worker", "nfs_mounter"], :default=>"/var/vcap/nfs", :description=>"The location at which to mount the nfs share"}
+--------------------
+request_timeout_in_seconds
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker", "gorouter", "haproxy"], :default=>900, :description=>"Timeout for requests in seconds."}
+--------------------
+route_registrar.routes
+{:jobs=>["route_registrar"], :default=>nil, :description=>"* Array of hashes determining which routes will be registered.\n* Each hash should have 'port', 'uris', and 'name' keys.\n* Additionally, the 'tags' and 'healthcheck' keys are optional.\n* 'uris' is an array of URIs to register for the 'port'.\n* 'tags' are included in metrics that gorouter emits to support filtering.\n* 'healthcheck' is a hash which should have 'name' and 'script_path'.\n* 'healthcheck.timeout' is optional, and is measured in seconds.\n"}
+--------------------
+route_registrar.update_frequency_in_seconds
+{:jobs=>["route_registrar"], :default=>20, :description=>"The delay in seconds between routing updates"}
+--------------------
+router.cipher_suites
+{:jobs=>["gorouter"], :default=>"TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256:TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256:TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA:TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA:TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA:TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA:TLS_RSA_WITH_AES_128_CBC_SHA:TLS_RSA_WITH_AES_256_CBC_SHA", :description=>"An ordered list of supported SSL cipher suites containing golang tls constants separated by colons The cipher suite will be chosen according to this order during SSL handshake"}
+--------------------
+router.debug_addr
+{:jobs=>["gorouter"], :default=>"0.0.0.0:17001", :description=>"Address at which to serve debug info"}
+--------------------
+router.enable_routing_api
+{:jobs=>["gorouter"], :default=>false, :description=>"Enable the GoRouter to receive routes from the Routing API"}
+--------------------
+router.enable_ssl
+{:jobs=>["gorouter"], :default=>false, :description=>"Enable ssl termination on the router"}
+--------------------
+router.extra_headers_to_log
+{:jobs=>["gorouter"], :default=>[], :description=>"A list of headers that log events will be annotated with"}
+--------------------
+router.logging_level
+{:jobs=>["gorouter"], :default=>"info", :description=>"Log level for router"}
+--------------------
+router.logrotate.freq_min
+{:jobs=>["gorouter"], :default=>5, :description=>"The frequency in minutes which logrotate will rotate VM logs"}
+--------------------
+router.logrotate.rotate
+{:jobs=>["gorouter"], :default=>7, :description=>"The number of files that logrotate will keep around on the VM"}
+--------------------
+router.logrotate.size
+{:jobs=>["gorouter"], :default=>"2M", :description=>"The size at which logrotate will decide to rotate the log file"}
+--------------------
+router.number_of_cpus
+{:jobs=>["gorouter"], :default=>-1, :description=>"Number of CPUs to utilize, the default (-1) will equal the number of available CPUs"}
+--------------------
+router.offset
+{:jobs=>["gorouter"], :default=>0, :description=>nil}
+--------------------
+router.port
+{:jobs=>["gorouter", "haproxy"], :default=>80, :description=>"Listening Port for Router."}
+--------------------
+router.requested_route_registration_interval_in_seconds
+{:jobs=>["dea_next", "gorouter"], :default=>20, :description=>"Interval at which the router requests routes to be registered."}
+--------------------
+router.route_services_secret
+{:jobs=>["cloud_controller_ng", "gorouter"], :default=>"", :description=>"Support for route services is disabled when no value is configured."}
+--------------------
+router.route_services_secret_decrypt_only
+{:jobs=>["gorouter"], :default=>"", :description=>"To rotate keys, add your new key here and deploy. Then swap this key with the value of route_services_secret and deploy again."}
+--------------------
+router.route_services_timeout
+{:jobs=>["gorouter"], :default=>60, :description=>"Expiry time of a route service signature in seconds"}
+--------------------
+router.secure_cookies
+{:jobs=>["gorouter"], :default=>false, :description=>"Set secure flag on http cookies"}
+--------------------
+router.servers.z1
+{:jobs=>["haproxy"], :default=>[], :description=>"Array of the router IPs acting as the first group of HTTP/TCP backends"}
+--------------------
+router.servers.z2
+{:jobs=>["haproxy"], :default=>[], :description=>"Array of the router IPs acting as the second group of HTTP/TCP backends"}
+--------------------
+router.ssl_cert
+{:jobs=>["gorouter"], :default=>"", :description=>"The public ssl cert for ssl termination"}
+--------------------
+router.ssl_key
+{:jobs=>["gorouter"], :default=>"", :description=>"The private ssl key for ssl termination"}
+--------------------
+router.ssl_skip_validation
+{:jobs=>["gorouter"], :default=>false, :description=>"Skip SSL client cert validation"}
+--------------------
+router.status.password
+{:jobs=>["gorouter"], :default=>nil, :description=>"Password for HTTP basic auth to the varz/status endpoint."}
+--------------------
+router.status.port
+{:jobs=>["gorouter"], :default=>8080, :description=>"Port for the Router varz/status endpoint."}
+--------------------
+router.status.user
+{:jobs=>["gorouter"], :default=>nil, :description=>"Username for HTTP basic auth to the varz/status endpoint."}
+--------------------
+router.trace_key
+{:jobs=>["gorouter"], :default=>22, :description=>"If the X-Vcap-Trace request header is set and has this value, trace headers are added to the response."}
+--------------------
+routing-api.auth_disabled
+{:jobs=>["gorouter", "routing-api"], :default=>false, :description=>"Disables UAA authentication"}
+--------------------
+routing-api.debug_address
+{:jobs=>["routing-api"], :default=>"0.0.0.0:17002", :description=>"Address at which to serve debug info"}
+--------------------
+routing-api.max_concurrent_etcd_requests
+{:jobs=>["routing-api"], :default=>25, :description=>"Maximum number of concurrent ETCD requests"}
+--------------------
+routing-api.max_ttl
+{:jobs=>["routing-api"], :default=>60, :description=>"The maximum ttl"}
+--------------------
+routing-api.metrics_reporting_interval
+{:jobs=>["routing-api"], :default=>"30s", :description=>"String representing interval for reporting metrics. Units: ms, s, m h"}
+--------------------
+routing-api.port
+{:jobs=>["gorouter", "routing-api"], :default=>3000, :description=>"Port on which routing-api is running."}
+--------------------
+routing-api.statsd_client_flush_interval
+{:jobs=>["routing-api"], :default=>"300ms", :description=>"Buffered statsd client flush interval"}
+--------------------
+routing-api.statsd_endpoint
+{:jobs=>["routing-api"], :default=>"localhost:8125", :description=>"The endpoint for the statsd server, defaults to the local metron agent"}
+--------------------
+smoke_tests.api
+{:jobs=>["smoke-tests"], :default=>nil, :description=>"The Elastic Runtime API endpoint URL"}
+--------------------
+smoke_tests.apps_domain
+{:jobs=>["smoke-tests"], :default=>nil, :description=>"The Elastic Runtime Application Domain"}
+--------------------
+smoke_tests.ginkgo_opts
+{:jobs=>["smoke-tests"], :default=>"", :description=>"Ginkgo options for the smoke tests"}
+--------------------
+smoke_tests.logging_app
+{:jobs=>["smoke-tests"], :default=>"", :description=>"The Elastic Runtime app name to use when running logging tests"}
+--------------------
+smoke_tests.org
+{:jobs=>["smoke-tests"], :default=>nil, :description=>"The Elastic Runtime organization name to use when running tests"}
+--------------------
+smoke_tests.password
+{:jobs=>["smoke-tests"], :default=>nil, :description=>"The Elastic Runtime API user's password"}
+--------------------
+smoke_tests.runtime_app
+{:jobs=>["smoke-tests"], :default=>"", :description=>"The Elastic Runtime app name to use when running runtime tests"}
+--------------------
+smoke_tests.skip_ssl_validation
+{:jobs=>["smoke-tests"], :default=>false, :description=>"Toggles cli verification of the Elastic Runtime API SSL certificate"}
+--------------------
+smoke_tests.space
+{:jobs=>["smoke-tests"], :default=>nil, :description=>"The Elastic Runtime space name to use when running tests"}
+--------------------
+smoke_tests.suite_name
+{:jobs=>["smoke-tests"], :default=>"CF_SMOKE_TESTS", :description=>"A token used by the tests when creating Apps / Spaces"}
+--------------------
+smoke_tests.use_existing_org
+{:jobs=>["smoke-tests"], :default=>false, :description=>"Toggles setup and cleanup of the Elastic Runtime organization"}
+--------------------
+smoke_tests.use_existing_space
+{:jobs=>["smoke-tests"], :default=>false, :description=>"Toggles setup and cleanup of the Elastic Runtime space"}
+--------------------
+smoke_tests.user
+{:jobs=>["smoke-tests"], :default=>nil, :description=>"The Elastic Runtime API user"}
+--------------------
+ssl.skip_cert_verify
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker", "hm9000", "loggregator_trafficcontroller", "syslog_drain_binder"], :default=>false, :description=>"specifies that the job is allowed to skip ssl cert verification"}
+--------------------
+statsd_injector.log_level
+{:jobs=>["statsd-injector"], :default=>"info", :description=>"The log level for the statsd injector"}
+--------------------
+statsd_injector.metron_port
+{:jobs=>["statsd-injector"], :default=>3457, :description=>"The port on which metron is running"}
+--------------------
+statsd_injector.statsd_port
+{:jobs=>["statsd-injector"], :default=>8125, :description=>"The port on which the injector should listen for statsd messages"}
+--------------------
+support_address
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>"", :description=>"'support' attribute in the /v2/info endpoint"}
+--------------------
+syslog_daemon_config.address
+{:jobs=>["metron_agent"], :default=>nil, :description=>"IP address for syslog aggregator"}
+--------------------
+syslog_daemon_config.custom_rule
+{:jobs=>["metron_agent"], :default=>"", :description=>"Custom rule for syslog forward daemon"}
+--------------------
+syslog_daemon_config.fallback_addresses
+{:jobs=>["metron_agent"], :default=>[], :description=>"Addresses of fallback servers to be used if the primary syslog server is down. Only tcp or relp are supported. Each list entry should consist of \"address\", \"transport\" and \"port\" keys. "}
+--------------------
+syslog_daemon_config.max_message_size
+{:jobs=>["metron_agent"], :default=>"4k", :description=>"maximum message size to be sent"}
+--------------------
+syslog_daemon_config.port
+{:jobs=>["metron_agent"], :default=>nil, :description=>"TCP port of syslog aggregator"}
+--------------------
+syslog_daemon_config.transport
+{:jobs=>["metron_agent"], :default=>"tcp", :description=>"Transport to be used when forwarding logs (tcp|udp|relp)."}
+--------------------
+syslog_drain_binder.debug
+{:jobs=>["syslog_drain_binder"], :default=>false, :description=>"boolean value to turn on verbose logging for syslog_drain_binder"}
+--------------------
+syslog_drain_binder.drain_url_ttl_seconds
+{:jobs=>["syslog_drain_binder"], :default=>60, :description=>"Time to live for drain urls in seconds"}
+--------------------
+syslog_drain_binder.polling_batch_size
+{:jobs=>["syslog_drain_binder"], :default=>1000, :description=>"Batch size for the poll from cloud controller"}
+--------------------
+syslog_drain_binder.update_interval_seconds
+{:jobs=>["syslog_drain_binder"], :default=>15, :description=>"Interval on which to poll cloud controller in seconds"}
+--------------------
+system_domain
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker", "loggregator_trafficcontroller", "routing-api", "syslog_drain_binder"], :default=>nil, :description=>"Domain reserved for CF operator, base URL where the login, uaa, and other non-user apps listen"}
+--------------------
+system_domain_organization
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>"", :description=>"The User Org that owns the system_domain, required if system_domain is defined"}
+--------------------
+traffic_controller.debug
+{:jobs=>["loggregator_trafficcontroller"], :default=>false, :description=>"boolean value to turn on verbose logging for loggregator system (dea agent & loggregator server)"}
+--------------------
+traffic_controller.outgoing_port
+{:jobs=>["loggregator_trafficcontroller"], :default=>8080, :description=>"Port on which the traffic controller listens to for requests"}
+--------------------
+traffic_controller.zone
+{:jobs=>["loggregator_trafficcontroller"], :default=>nil, :description=>"Zone of the loggregator_trafficcontroller"}
+--------------------
+uaa.admin.client_secret
+{:jobs=>["uaa"], :default=>nil, :description=>"Secret of the admin client - a client named admin with uaa.admin as an authority"}
+--------------------
+uaa.authentication.policy.countFailuresWithinSeconds
+{:jobs=>["uaa"], :default=>3600, :description=>"Number of seconds in which lockoutAfterFailures failures must occur in order for account to be locked"}
+--------------------
+uaa.authentication.policy.global.countFailuresWithinSeconds
+{:jobs=>["uaa"], :default=>3600, :description=>"Number of seconds in which lockoutAfterFailures failures must occur in order for account to be locked"}
+--------------------
+uaa.authentication.policy.global.lockoutAfterFailures
+{:jobs=>["uaa"], :default=>5, :description=>"Number of allowed failures before account is locked"}
+--------------------
+uaa.authentication.policy.global.lockoutPeriodSeconds
+{:jobs=>["uaa"], :default=>300, :description=>"Number of seconds to lock out an account when lockoutAfterFailures failures is exceeded"}
+--------------------
+uaa.authentication.policy.lockoutAfterFailures
+{:jobs=>["uaa"], :default=>5, :description=>"Number of allowed failures before account is locked"}
+--------------------
+uaa.authentication.policy.lockoutPeriodSeconds
+{:jobs=>["uaa"], :default=>300, :description=>"Number of seconds to lock out an account when lockoutAfterFailures failures is exceeded"}
+--------------------
+uaa.catalina_opts
+{:jobs=>["uaa"], :default=>"-Xmx768m -XX:MaxPermSize=256m", :description=>"The options used to configure Tomcat"}
+--------------------
+uaa.cc.token_secret
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>nil, :description=>nil}
+--------------------
+uaa.client.autoapprove
+{:jobs=>["uaa"], :default=>["login", "support-signon"], :description=>"Deprecated"}
+--------------------
+uaa.clients
+{:jobs=>["uaa"], :default=>nil, :description=>"List of OAuth2 clients that the UAA will be bootstrapped with"}
+--------------------
+uaa.clients.cc-service-dashboards.scope
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>"openid,cloud_controller_service_permissions.read", :description=>"Used to grant scope for SSO clients for service brokers"}
+--------------------
+uaa.clients.cc-service-dashboards.secret
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>nil, :description=>"Used for generating SSO clients for service brokers."}
+--------------------
+uaa.clients.cc_routing.secret
+{:jobs=>["cloud_controller_ng"], :default=>nil, :description=>"Used for fetching routing information from the Routing API"}
+--------------------
+uaa.clients.cc_service_broker_client.scope
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>"openid,cloud_controller_service_permissions.read", :description=>"(DEPRECATED) - Used to grant scope for SSO clients for service brokers"}
+--------------------
+uaa.clients.cc_service_broker_client.secret
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>nil, :description=>"(DEPRECATED) - Used for generating SSO clients for service brokers."}
+--------------------
+uaa.clients.cloud_controller_username_lookup.secret
+{:jobs=>["cloud_controller_ng"], :default=>nil, :description=>"Used for fetching usernames from UAA."}
+--------------------
+uaa.clients.doppler.secret
+{:jobs=>["loggregator_trafficcontroller"], :default=>nil, :description=>"Doppler's client secret to connect to UAA"}
+--------------------
+uaa.clients.gorouter.secret
+{:jobs=>["gorouter"], :default=>nil, :description=>"Password for UAA client for the gorouter."}
+--------------------
+uaa.database.abandoned_timeout
+{:jobs=>["uaa"], :default=>300, :description=>"Timeout in seconds for the longest running queries. Take into DB migrations for this timeout as they may run during a long period of time."}
+--------------------
+uaa.database.case_insensitive
+{:jobs=>["uaa"], :default=>nil, :description=>"Set to true if you don't want to be using LOWER() SQL functions in search queries/filters, because you know that your DB is case insensitive. If this property is null, then it will be set to true if the UAA DB is MySQL and false otherwise, but even on MySQL you can override it by setting it explicitly to false"}
+--------------------
+uaa.database.log_abandoned
+{:jobs=>["uaa"], :default=>true, :description=>"Should connections that are forcibly closed be logged."}
+--------------------
+uaa.database.max_connections
+{:jobs=>["uaa"], :default=>100, :description=>"The max number of open connections to the DB from a running UAA instance"}
+--------------------
+uaa.database.max_idle_connections
+{:jobs=>["uaa"], :default=>10, :description=>"The max number of open idle connections to the DB from a running UAA instance"}
+--------------------
+uaa.database.remove_abandoned
+{:jobs=>["uaa"], :default=>false, :description=>"True if connections that are left open longer then abandoned_timeout seconds during a session(time between borrow and return from pool) should be forcibly closed"}
+--------------------
+uaa.disableInternalAuth
+{:jobs=>["uaa"], :default=>false, :description=>"Disables internal user authentication"}
+--------------------
+uaa.disableInternalUserManagement
+{:jobs=>["uaa"], :default=>false, :description=>"Disables UI and API for internal user management"}
+--------------------
+uaa.dump_requests
+{:jobs=>["uaa"], :default=>false, :description=>"When set to true dumps UAA requests to uaa.log"}
+--------------------
+uaa.issuer
+{:jobs=>["uaa"], :default=>nil, :description=>"The url to use as the issuer URI"}
+--------------------
+uaa.jwt.claims.exclude
+{:jobs=>["uaa"], :default=>nil, :description=>"List of claims to exclude from the JWT-based OAuth2 tokens"}
+--------------------
+uaa.jwt.policy.accessTokenValiditySeconds
+{:jobs=>["uaa"], :default=>43200, :description=>"The access token validity for the default zone if nothing is configured on the client. Will override global validity policies for the default zone only."}
+--------------------
+uaa.jwt.policy.global.accessTokenValiditySeconds
+{:jobs=>["uaa"], :default=>43200, :description=>"The global access token validity for all zones if nothing is configured on the client"}
+--------------------
+uaa.jwt.policy.global.refreshTokenValiditySeconds
+{:jobs=>["uaa"], :default=>2592000, :description=>"The global refresh token validity for all zones if nothing is configured on the client"}
+--------------------
+uaa.jwt.policy.keys
+{:jobs=>["uaa"], :default=>nil, :description=>"Map of key ids to key pairs (signing and verification keys)"}
+--------------------
+uaa.jwt.policy.refreshTokenValiditySeconds
+{:jobs=>["uaa"], :default=>2592000, :description=>"The refresh token validity for the default zone if nothing is configured on the client. Will override global validity policies for the default zone only."}
+--------------------
+uaa.jwt.signing_key
+{:jobs=>["uaa"], :default=>nil, :description=>"The key used to sign the JWT-based OAuth2 tokens"}
+--------------------
+uaa.jwt.verification_key
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker", "uaa"], :default=>"", :description=>"ssl cert defined in the manifest by the UAA, required by the cc to communicate with UAA"}
+--------------------
+uaa.ldap.attributeMappings
+{:jobs=>["uaa"], :default=>nil, :description=>"Specifies how UAA user attributes map to LDAP attributes. given_name, family_name, and phone_number are UAA user attributes, while other attributes should be included using the prefix `user.attribute`"}
+--------------------
+uaa.ldap.emailDomain
+{:jobs=>["uaa"], :default=>nil, :description=>"Sets the whitelist of emails domains that the LDAP identity provider handles"}
+--------------------
+uaa.ldap.enabled
+{:jobs=>["uaa"], :default=>false, :description=>"Set to true to enable LDAP"}
+--------------------
+uaa.ldap.externalGroupsWhitelist
+{:jobs=>["uaa"], :default=>nil, :description=>"Whitelist of external groups from LDAP that get added as roles in the ID Token"}
+--------------------
+uaa.ldap.groups.autoAdd
+{:jobs=>["uaa"], :default=>"true", :description=>"Set to true when profile_type=groups_as_scopes to auto create scopes for a user. Ignored for other profiles."}
+--------------------
+uaa.ldap.groups.groupRoleAttribute
+{:jobs=>["uaa"], :default=>nil, :description=>"Used with groups-as-scopes, defines the attribute that holds the scope name(s)."}
+--------------------
+uaa.ldap.groups.groupSearchFilter
+{:jobs=>["uaa"], :default=>"member={0}", :description=>"Search query filter to find the groups a user belongs to, or for a nested search, groups that a group belongs to"}
+--------------------
+uaa.ldap.groups.maxSearchDepth
+{:jobs=>["uaa"], :default=>"1", :description=>"Set to number of levels a nested group search should go. Set to 1 to disable nested groups (default)"}
+--------------------
+uaa.ldap.groups.profile_type
+{:jobs=>["uaa"], :default=>"no-groups", :description=>"What type of group integration should be used. Values are: 'no-groups', 'groups-as-scopes', 'groups-map-to-scopes'"}
+--------------------
+uaa.ldap.groups.searchBase
+{:jobs=>["uaa"], :default=>"", :description=>"Search start point for a user group membership search"}
+--------------------
+uaa.ldap.groups.searchSubtree
+{:jobs=>["uaa"], :default=>"true", :description=>"Boolean value, set to true to search below the search base"}
+--------------------
+uaa.ldap.localPasswordCompare
+{:jobs=>["uaa"], :default=>"true", :description=>"Used with search-and-compare only. Set to true if passwords are retrieved by the search, and should be compared in the login server."}
+--------------------
+uaa.ldap.mailAttributeName
+{:jobs=>["uaa"], :default=>"mail", :description=>"The name of the LDAP attribute that contains the users email address"}
+--------------------
+uaa.ldap.mailSubstitute
+{:jobs=>["uaa"], :default=>"", :description=>"Defines an email pattern containing a {0} to generate an email address for an LDAP user during authentication"}
+--------------------
+uaa.ldap.mailSubstituteOverridesLdap
+{:jobs=>["uaa"], :default=>false, :description=>"Set to true if you wish to override an LDAP user email address with a generated one"}
+--------------------
+uaa.ldap.passwordAttributeName
+{:jobs=>["uaa"], :default=>"userPassword", :description=>"Used with search-and-compare only. The name of the password attribute in the LDAP directory"}
+--------------------
+uaa.ldap.passwordEncoder
+{:jobs=>["uaa"], :default=>"org.cloudfoundry.identity.uaa.ldap.DynamicPasswordComparator", :description=>"Used with search-and-compare only. The encoder used to properly encode user password to match the one in the LDAP directory."}
+--------------------
+uaa.ldap.profile_type
+{:jobs=>["uaa"], :default=>"search-and-bind", :description=>"The file to be used for configuring the LDAP authentication. Options are: 'simple-bind', 'search-and-bind', 'search-and-compare'"}
+--------------------
+uaa.ldap.searchBase
+{:jobs=>["uaa"], :default=>"", :description=>"Used with search-and-bind and search-and-compare. Define a base where the search starts at."}
+--------------------
+uaa.ldap.searchFilter
+{:jobs=>["uaa"], :default=>"cn={0}", :description=>"Used with search-and-bind and search-and-compare. Search filter used. Takes one parameter, user ID defined as {0}"}
+--------------------
+uaa.ldap.sslCertificate
+{:jobs=>["uaa"], :default=>nil, :description=>"Used with ldaps:// URLs. The certificate, if self signed, to be trusted by this connection."}
+--------------------
+uaa.ldap.sslCertificateAlias
+{:jobs=>["uaa"], :default=>nil, :description=>"Used with ldaps:// URLs. The certificate alias, to be trusted by this connection and stored in the keystore."}
+--------------------
+uaa.ldap.url
+{:jobs=>["uaa"], :default=>nil, :description=>"The URL to the ldap server, must start with ldap:// or ldaps://"}
+--------------------
+uaa.ldap.userDN
+{:jobs=>["uaa"], :default=>nil, :description=>"Used with search-and-bind and search-and-compare. A valid LDAP ID that has read permissions to perform a search of the LDAP tree for user information. "}
+--------------------
+uaa.ldap.userDNPattern
+{:jobs=>["uaa"], :default=>nil, :description=>"Used with simple-bind only. A semi-colon separated lists of DN patterns to construct a DN direct from the user ID without performing a search."}
+--------------------
+uaa.ldap.userDNPatternDelimiter
+{:jobs=>["uaa"], :default=>";", :description=>"The delimiter character in between user DN patterns for simple-bind authentication"}
+--------------------
+uaa.ldap.userPassword
+{:jobs=>["uaa"], :default=>nil, :description=>"Used with search-and-bind and search-and-compare. Password for the LDAP ID that performs a search of the LDAP tree for user information."}
+--------------------
+uaa.logging_level
+{:jobs=>["uaa"], :default=>"DEBUG", :description=>"Set UAA logging level.  (e.g. TRACE, DEBUG, INFO)"}
+--------------------
+uaa.logging_use_rfc3339
+{:jobs=>["uaa"], :default=>false, :description=>"Sets the time format for log messages to be yyyy-MM-dd'T'HH:mm:ss.SSSXXX instead of yyyy-MM-dd HH:mm:ss.SSS"}
+--------------------
+uaa.login.client_secret
+{:jobs=>["uaa"], :default=>nil, :description=>"Default login client secret, if no login client is defined"}
+--------------------
+uaa.newrelic
+{:jobs=>["uaa"], :default=>nil, :description=>"To enable newrelic monitoring, the sub element of this property will be placed in\na configuration file called newrelic.yml in the jobs config directory.\nThe syntax that must adhere to documentation in https://docs.newrelic.com/docs/agents/java-agent/configuration/java-agent-configuration-config-file\nThe JVM option -javaagent:/path/to/newrelic.jar will be added to Apache Tomcat's startup script\nThe enablement of the NewRelic agent in the UAA is triggered by the property uaa.newrelic.common.license_key\nThe property uaa.newrelic.common.license_key must be set!\n"}
+--------------------
+uaa.password.policy.expirePasswordInMonths
+{:jobs=>["uaa"], :default=>0, :description=>"Number of months after which current password expires"}
+--------------------
+uaa.password.policy.global.expirePasswordInMonths
+{:jobs=>["uaa"], :default=>0, :description=>"Number of months after which current password expires"}
+--------------------
+uaa.password.policy.global.maxLength
+{:jobs=>["uaa"], :default=>255, :description=>"Maximum number of characters required for password to be considered valid"}
+--------------------
+uaa.password.policy.global.minLength
+{:jobs=>["uaa"], :default=>0, :description=>"Minimum number of characters required for password to be considered valid"}
+--------------------
+uaa.password.policy.global.requireDigit
+{:jobs=>["uaa"], :default=>0, :description=>"Minimum number of digits required for password to be considered valid"}
+--------------------
+uaa.password.policy.global.requireLowerCaseCharacter
+{:jobs=>["uaa"], :default=>0, :description=>"Minimum number of lowercase characters required for password to be considered valid"}
+--------------------
+uaa.password.policy.global.requireSpecialCharacter
+{:jobs=>["uaa"], :default=>0, :description=>"Minimum number of special characters required for password to be considered valid"}
+--------------------
+uaa.password.policy.global.requireUpperCaseCharacter
+{:jobs=>["uaa"], :default=>0, :description=>"Minimum number of uppercase characters required for password to be considered valid"}
+--------------------
+uaa.password.policy.maxLength
+{:jobs=>["uaa"], :default=>255, :description=>"Maximum number of characters required for password to be considered valid"}
+--------------------
+uaa.password.policy.minLength
+{:jobs=>["uaa"], :default=>0, :description=>"Minimum number of characters required for password to be considered valid"}
+--------------------
+uaa.password.policy.requireDigit
+{:jobs=>["uaa"], :default=>0, :description=>"Minimum number of digits required for password to be considered valid"}
+--------------------
+uaa.password.policy.requireLowerCaseCharacter
+{:jobs=>["uaa"], :default=>0, :description=>"Minimum number of lowercase characters required for password to be considered valid"}
+--------------------
+uaa.password.policy.requireSpecialCharacter
+{:jobs=>["uaa"], :default=>0, :description=>"Minimum number of special characters required for password to be considered valid"}
+--------------------
+uaa.password.policy.requireUpperCaseCharacter
+{:jobs=>["uaa"], :default=>0, :description=>"Minimum number of uppercase characters required for password to be considered valid"}
+--------------------
+uaa.port
+{:jobs=>["gorouter", "routing-api", "uaa"], :default=>8080, :description=>"Port on which UAA is running."}
+--------------------
+uaa.proxy.servers
+{:jobs=>["uaa"], :default=>[], :description=>"Array of the router IPs acting as the first group of HTTP/TCP backends. These will be added to the proxy_ips_regex as exact matches. When using spiff, these will be router_z1 and router_z2 static IPs from cf-jobs.yml"}
+--------------------
+uaa.proxy_ips_regex
+{:jobs=>["uaa"], :default=>"10\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}|192\\.168\\.\\d{1,3}\\.\\d{1,3}|169\\.254\\.\\d{1,3}\\.\\d{1,3}|127\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}|172\\.1[6-9]{1}\\.\\d{1,3}\\.\\d{1,3}|172\\.2[0-9]{1}\\.\\d{1,3}\\.\\d{1,3}|172\\.3[0-1]{1}\\.\\d{1,3}\\.\\d{1,3}", :description=>"A pipe delimited set of regular expressions of IP addresses that are considered reverse proxies.\nWhen a request from these IP addresses come in, the x-forwarded-for and x-forwarded-proto headers will be respected.\nIf the uaa.restricted_ips_regex is set, it will be appended to this list for backwards compatibility purposes\nIf spiff has been used and includes templates/cf-jobs.yml to generate the manifest. This list will automatically\ncontain the Router IP addresses\n"}
+--------------------
+uaa.require_https
+{:jobs=>["uaa"], :default=>true, :description=>"Request came in on a secure connection. Expect the load balancer/proxy to set the proper headers (x-forwarded-for, x-forwarded-proto)"}
+--------------------
+uaa.restricted_ips_regex
+{:jobs=>["uaa"], :default=>"10\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}|192\\.168\\.\\d{1,3}\\.\\d{1,3}|169\\.254\\.\\d{1,3}\\.\\d{1,3}|127\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}|172\\.1[6-9]{1}\\.\\d{1,3}\\.\\d{1,3}|172\\.2[0-9]{1}\\.\\d{1,3}\\.\\d{1,3}|172\\.3[0-1]{1}\\.\\d{1,3}\\.\\d{1,3}", :description=>"A pipe delimited set of regular expressions of IP addresses that can reach the listening HTTP port of the server."}
+--------------------
+uaa.scim.external_groups
+{:jobs=>["uaa"], :default=>nil, :description=>"A list of external group mappings. Pipe delimited. A value may look as '- internal.read|cn=developers,ou=scopes,dc=test,dc=com'"}
+--------------------
+uaa.scim.groups
+{:jobs=>["uaa"], :default=>nil, :description=>"Comma separated list of groups that should be added to the UAA db, but not assigned to a user by default."}
+--------------------
+uaa.scim.user.override
+{:jobs=>["uaa"], :default=>true, :description=>"If true override users defined in uaa.scim.users found in the database."}
+--------------------
+uaa.scim.userids_enabled
+{:jobs=>["uaa"], :default=>true, :description=>"Enables the endpoint `/ids/Users` that allows consumers to translate user ids to name"}
+--------------------
+uaa.scim.users
+{:jobs=>["uaa"], :default=>nil, :description=>"A list of users to be bootstrapped with default authority. Each entry has the following format: username|password|email|firstName|lastName"}
+--------------------
+uaa.spring_profiles
+{:jobs=>["uaa"], :default=>nil, :description=>"Deprecated. Use 'uaa.ldap.enabled' instead. Sets the Spring profiles on the UAA web application. This gets combined with the 'uaadb.db_scheme' property if and only if the value is exactly 'ldap' in order to setup the database, for example 'ldap,mysql'. If spring_profiles contains more than just 'ldap' it will be used to overwrite spring_profiles and db_scheme ignored. See uaa.yml.erb."}
+--------------------
+uaa.ssl.port
+{:jobs=>["uaa"], :default=>8443, :description=>"If this property Tomcat will listen to this port and expect https traffic. If null, tomcat will not listen to this port"}
+--------------------
+uaa.sslCertificate
+{:jobs=>["uaa"], :default=>nil, :description=>"The server's ssl certificate. The default is a self-signed certificate and should always be replaced for production deployments"}
+--------------------
+uaa.sslPrivateKey
+{:jobs=>["uaa"], :default=>nil, :description=>"The server's ssl private key. Only passphrase-less keys are supported"}
+--------------------
+uaa.url
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker", "loggregator_trafficcontroller", "uaa"], :default=>nil, :description=>nil}
+--------------------
+uaa.user.authorities
+{:jobs=>["uaa"], :default=>["openid", "scim.me", "cloud_controller.read", "cloud_controller.write", "cloud_controller_service_permissions.read", "password.write", "uaa.user", "approvals.me", "oauth.approvals", "notification_preferences.read", "notification_preferences.write", "profile", "roles", "user_attributes"], :description=>"Contains a list of the default authorities/scopes assigned to a user"}
+--------------------
+uaa.zones.internal.hostnames
+{:jobs=>["uaa"], :default=>nil, :description=>"A list of hostnames that are routed to the UAA, specifically the default zone in the UAA. The UAA will reject any Host headers that it doesn't recognize.\nBy default the UAA recognizes:\n  The hostname from the property uaa.url\n  The hostname from the property login.url\n  localhost (in order to accept health checks)\nAny hostnames added as a list are additive to the default hostnames allowed.\n"}
+--------------------
+uaadb.address
+{:jobs=>["uaa"], :default=>nil, :description=>"The UAA database IP address"}
+--------------------
+uaadb.databases
+{:jobs=>["uaa"], :default=>nil, :description=>"The list of databases used in UAA database including tag/name"}
+--------------------
+uaadb.db_scheme
+{:jobs=>["uaa"], :default=>nil, :description=>"Database scheme for UAA DB"}
+--------------------
+uaadb.port
+{:jobs=>["uaa"], :default=>nil, :description=>"The UAA database Port"}
+--------------------
+uaadb.roles
+{:jobs=>["uaa"], :default=>nil, :description=>"The list of database Roles used in UAA database including tag/name/password"}
+--------------------
+version
+{:jobs=>["cloud_controller_clock", "cloud_controller_ng", "cloud_controller_worker"], :default=>0, :description=>"'version' attribute in the /v2/info endpoint"}
