@@ -33,7 +33,7 @@ def analyze_release(release_directory)
   analyze_job_properties specs
 end
 
-def analyze_job_properties(specs)
+def parse_specs(specs)
   job_properties = {}
 
   specs.each do |s|
@@ -56,16 +56,50 @@ def analyze_job_properties(specs)
       end
     end
   end
+  job_properties.sort
+end
 
+def all_job_properties(specs)
+  parse_specs specs
+end
+
+def optional_job_properties(specs)
+  parse_specs(specs).select { |k,v| !v[:default].nil? }
+end
+
+def required_job_properties(specs)
+  parse_specs(specs).select { |k,v| v[:default].nil? }
+end
+
+def analyze_job_properties(specs)
+  job_properties = all_job_properties specs
   puts "#"*30
   puts "Job Property Count: #{job_properties.count}"
   puts "#"*30
 
-  puts ""
-  puts "Properties:"
-  puts ""
+  puts "#"*30
+  puts "All Properties:"
+  puts "#"*30
 
-  job_properties.sort.each do |jp|
+  job_properties.each do |jp|
+    puts "-"*20
+    puts jp
+  end
+
+  puts "#"*30
+  puts "Required Properties:"
+  puts "#"*30
+
+  required_job_properties(specs).each do |jp|
+    puts "-"*20
+    puts jp
+  end
+
+  puts "#"*30
+  puts "Optional Properties:"
+  puts "#"*30
+
+  optional_job_properties(specs).each do |jp|
     puts "-"*20
     puts jp
   end
